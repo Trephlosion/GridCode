@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Little and Middle Curl
   m_EditorClassIdentifier: 
   m_FingerShapeConditions:
-  - m_FingerID: 4
+  - m_FingerID: 3
     m_Targets:
     - m_ShapeType: 0
       m_UpperTolerance: 0.5
