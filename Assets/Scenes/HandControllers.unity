@@ -202,15 +202,31 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1277054153949319361, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Select
-      m_Type: 1
-      m_ExpectedControlType: Button
+      m_Type: 0
+      m_ExpectedControlType: Pose
       m_Id: 3207346a-8b2f-4b24-b45a-90ea1cdef7fb
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: One Modifier
+        m_Id: 950c6ed7-3174-4cd4-8579-897128170866
+        m_Path: OneModifier
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Select
+        m_Flags: 4
+      - m_Name: binding
+        m_Id: b6a47ddf-6ab0-4d04-9288-63310af87201
+        m_Path: <MetaAimHand>{RightHand}/ringPressed
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Select
+        m_Flags: 8
       m_Flags: 0
     m_Reference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_SelectActionValue:
