@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridCell : MonoBehaviour
 {
-    bool inUse;
+    public bool inUse;
     // Start is called before the first frame update
     void Start()
     {
