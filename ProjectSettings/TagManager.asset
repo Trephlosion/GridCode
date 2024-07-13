@@ -7,6 +7,12 @@ TagManager:
   - Cell
   - Node
   - Paent
+  - celltest
+  - ends
+  - wiretest
+  - Head
+  - Tail
+  - Compoonent
   layers:
   - Default
   - TransparentFX
