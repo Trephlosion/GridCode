@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = System.Object;
 
 public class Cell : MonoBehaviour
@@ -14,7 +15,8 @@ public class Cell : MonoBehaviour
     public bool Occ = false;
     private int occLevel = 0;
 
-    public float current, resistance, instantaneauosVoltage;
+    public float current, resistance;
+    [FormerlySerializedAs("instantaneauosVoltage")] public float instantaneousVoltage;
     private Renderer _renderer;
     private CircuitGrid circuitGrid;
 
@@ -47,6 +49,8 @@ public class Cell : MonoBehaviour
         }
 
         circuitGrid = FindObjectOfType<CircuitGrid>();
+
+        this.gameObject.GetComponent<Material>().defineComponent();
     }
 
 
