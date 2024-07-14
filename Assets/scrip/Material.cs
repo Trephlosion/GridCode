@@ -7,6 +7,8 @@ public class Material : MonoBehaviour
 {
    public float innateResistance, intakeVoltage;
    public bool isLive = false, isWeak = false, isBurst = false;
+   
+   
 
 
    public void setStatus()
