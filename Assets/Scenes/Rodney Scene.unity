@@ -2302,6 +2302,7 @@ GameObject:
   - component: {fileID: 2015980700}
   - component: {fileID: 2015980699}
   - component: {fileID: 2015980698}
+  - component: {fileID: 2015980702}
   m_Layer: 0
   m_Name: Wire
   m_TagString: Compoonent
@@ -2318,7 +2319,7 @@ Transform:
   m_GameObject: {fileID: 2015980696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -2.49, y: 0.43, z: 0.87}
+  m_LocalPosition: {x: -2.49, y: 1.02, z: 0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2413,6 +2414,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015980696}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2015980702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015980696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7ff66fae2e284ca9a5be942436c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  innateResistance: 0
+  intakeVoltage: 0
+  capacitance: 0
+  inductance: 0
+  isLed: 1
+  isResistor: 0
+  isLive: 0
+  isWeak: 0
+  isBurst: 0
+  nombre: 
 --- !u!1001 &2037568397
 PrefabInstance:
   m_ObjectHideFlags: 0

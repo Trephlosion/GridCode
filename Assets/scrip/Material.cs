@@ -39,6 +39,7 @@ public class Material : MonoBehaviour
       if (isLed)
       {
          this.gameObject.AddComponent<LED>();
+         
       }
 
       else if (isResistor)
@@ -80,7 +81,7 @@ public class LED : Material
    private float R, G, B;
    
 // initialize public variables here
-   public LED()
+   public void Start()
    {
       nombre = "LED";
       innateResistance = 4.0f;
