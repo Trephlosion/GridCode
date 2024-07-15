@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9143024289647805614}
   - component: {fileID: -3610658026904888126}
   - component: {fileID: 6933894118138489530}
+  - component: {fileID: 7386779842916410249}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Cell
@@ -124,6 +125,14 @@ MonoBehaviour:
   isPowered: 0
   isGrounded: 0
   isInactive: 0
+  Occ: 0
+  isUpdated: 0
+  current: 0
+  resistance: 0
+  instantaneousVoltage: 0
+  onTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &6933894118138489530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -141,7 +150,34 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.0125
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!54 &7386779842916410249
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836319410024568678}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -66,7 +66,7 @@ public class Cell : MonoBehaviour
 
     private void Update()
     {
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+        
     }
 
     private void FixedUpdate()
@@ -83,24 +83,29 @@ public class Cell : MonoBehaviour
 //TODO: check for multiple grid entries
 private void OnTriggerEnter(Collider other)
 {   
-    Ec = other.gameObject.GetComponent<ElectricComponent>(); 
-     personalMats = other.gameObject.GetComponent<Material>();
      
     if (other.gameObject.CompareTag("Head") && headptr == null)
     {
         headptr = other.gameObject;
         Debug.Log("Head attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+        
     }
 
     if (other.gameObject.CompareTag("Tail") && tailptr == null)
     {
         tailptr = other.gameObject;
         Debug.Log("Tail attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
     }
     
     onTriggerEnterEvent?.Invoke(this);
     isUpdated = true;
     onTriggerEnterEvent?.Invoke(this);
+    
+     // Ec = other.gameObject.GetComponent<ElectricComponent>(); 
+     // personalMats = other.gameObject.GetComponent<Material>();
+    
 }
 
 private void OnTriggerStay(Collider other)
@@ -128,7 +133,7 @@ private void OnTriggerStay(Collider other)
           //  circuitGrid.AddConnection(component);
         }
 
-        
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
 
     }
 
@@ -155,6 +160,7 @@ private void OnTriggerStay(Collider other)
         Ec = null;
         personalMats = null;
         isUpdated = false;
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
     }
 
 }
