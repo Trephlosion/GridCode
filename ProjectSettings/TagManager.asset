@@ -13,6 +13,7 @@ TagManager:
   - Head
   - Tail
   - Compoonent
+  - LED info
   layers:
   - Default
   - TransparentFX
