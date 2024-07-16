@@ -3,7 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Object = System.Object;
+
+using UnityEngine.Events;
+
+[System.Serializable]
+public class CellEvent : UnityEvent<Cell> { }
 
 public class Cell : MonoBehaviour
 {
@@ -13,10 +19,16 @@ public class Cell : MonoBehaviour
     public bool isPowered, isGrounded, isInactive;
     public bool Occ = false;
     private int occLevel = 0;
+    public bool isUpdated = false;
 
-    public float current, resistance, instantaneauosVoltage;
+    private GameObject headptr, tailptr;
+    //TODO: gameOBJ pointer that points to the head and tail occupants
+
+    public float current, resistance, instantaneousVoltage;
     private Renderer _renderer;
     private CircuitGrid circuitGrid;
+    private ElectricComponent Ec;
+    private Material personalMats;
 
     //TODO: reference to object properties
     // if occupied, then take component properties
@@ -27,7 +39,8 @@ public class Cell : MonoBehaviour
 
     // float partResistance, voltageRequired;
 
-
+    public CellEvent onTriggerEnterEvent;
+    
     private void Start()
     {
         _renderer = this.transform.GetComponent<Renderer>();
@@ -47,18 +60,13 @@ public class Cell : MonoBehaviour
         }
 
         circuitGrid = FindObjectOfType<CircuitGrid>();
+        
     }
-
-
-
-
-
-
 
 
     private void Update()
     {
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+        
     }
 
     private void FixedUpdate()
@@ -68,32 +76,64 @@ public class Cell : MonoBehaviour
             Occ = true;
             occLevel = 2;
         }
+        
+        
     }
 
 //TODO: check for multiple grid entries
-    private void OnTriggerStay(Collider other)
+private void OnTriggerEnter(Collider other)
+{   
+     
+    if (other.gameObject.CompareTag("Head") && headptr == null)
+    {
+        headptr = other.gameObject;
+        Debug.Log("Head attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+        
+    }
+
+    if (other.gameObject.CompareTag("Tail") && tailptr == null)
+    {
+        tailptr = other.gameObject;
+        Debug.Log("Tail attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+    }
+    
+    onTriggerEnterEvent?.Invoke(this);
+    isUpdated = true;
+    onTriggerEnterEvent?.Invoke(this);
+    
+     // Ec = other.gameObject.GetComponent<ElectricComponent>(); 
+     // personalMats = other.gameObject.GetComponent<Material>();
+    
+}
+
+private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Head"))
         {
             occLevel++;
-            other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
-            Debug.Log("head attatched");
+            headptr = other.gameObject.transform.parent.gameObject;
+            // other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
+
         }
 
         if (other.gameObject.CompareTag("Tail"))
         {
             occLevel++;
-            other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
-            Debug.Log("tail attatched");
+            tailptr = other.gameObject.transform.parent.gameObject;
+            //other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
+           
 
         }
 
         if (other.gameObject.CompareTag("Head") || other.gameObject.CompareTag("Tail"))
         {
             ElectricComponent component = other.gameObject.GetComponent<ElectricComponent>();
-            circuitGrid.AddConnection(component);
+          //  circuitGrid.AddConnection(component);
         }
 
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
 
     }
 
@@ -103,8 +143,24 @@ public class Cell : MonoBehaviour
         if (other.gameObject.CompareTag("Head") || other.gameObject.CompareTag("Tail"))
         {
             ElectricComponent component = other.gameObject.GetComponent<ElectricComponent>();
-            circuitGrid.RemoveConnection(component);
+            //circuitGrid.RemoveConnection(component);
         }
+        
+        if (other.gameObject == headptr)
+        {
+            headptr = null; // Delete the reference
+            Debug.Log("Head detached from Cell: " + gameObject.name);
+        }
+        else if (other.gameObject == tailptr)
+        {
+            tailptr = null; // Delete the reference
+            Debug.Log("Tail detached from Cell: " + gameObject.name);
+        }
+
+        Ec = null;
+        personalMats = null;
+        isUpdated = false;
+        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
     }
 
 }

@@ -9,6 +9,10 @@ public class ElectricComponent : MonoBehaviour
    //private Material properties;
    //private Special functions;
    
+   //TODO: gameobject pointer that points to the cell that it occupies
+   private bool isHeld;
+   //make true if its being held iin order to not snap
+   
    private bool active = false;
    private Renderer _renderer;
 
@@ -17,6 +21,7 @@ public class ElectricComponent : MonoBehaviour
    private void Start()
    {
       _renderer = this.transform.GetComponent<Renderer>();
+      this.gameObject.GetComponent<Material>().defineComponent();
    }
 
    private void Update()
@@ -42,6 +47,8 @@ public class ElectricComponent : MonoBehaviour
       }
       
    }
+   
+   
 
 
    private void OnTriggerStay(Collider other)
@@ -49,6 +56,7 @@ public class ElectricComponent : MonoBehaviour
       if (other.gameObject.CompareTag("Cell"))
       {
          active = true;
+            
          
       }
    }
@@ -61,4 +69,6 @@ public class ElectricComponent : MonoBehaviour
       }
    }
 
+
+   
 }
