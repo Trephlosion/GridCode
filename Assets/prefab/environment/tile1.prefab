@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e33ed03d3cedd442859690ed8353e4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6e33ed03d3cedd442859690ed8353e4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b29e87be0adf9ca478ec67b178e463ab, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e33ed03d3cedd442859690ed8353e4f, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1)
+      value: tile1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6e33ed03d3cedd442859690ed8353e4f, type: 3}
       propertyPath: m_StaticEditorFlags
