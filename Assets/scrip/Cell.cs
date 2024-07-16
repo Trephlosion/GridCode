@@ -15,20 +15,21 @@ public class Cell : MonoBehaviour
 {
     // Contains all inherit parts of each cell on the grid
 
+    public CellEvent onTriggerEnterEvent;
     public int x, y;
     public bool isPowered, isGrounded, isInactive;
-    public bool Occ = false;
     private int occLevel = 0;
-    public bool isUpdated = false;
+    public bool isOverlapped = false;
+    private Color curColor = Color.black;
 
-    private GameObject headptr, tailptr;
+    public GameObject headptr=null, tailptr = null;
+    public GameObject[] nodeOcc = new GameObject[2];
     //TODO: gameOBJ pointer that points to the head and tail occupants
 
     public float current, resistance, instantaneousVoltage;
     private Renderer _renderer;
     private CircuitGrid circuitGrid;
-    private ElectricComponent Ec;
-    private Material personalMats;
+    
 
     //TODO: reference to object properties
     // if occupied, then take component properties
@@ -38,8 +39,7 @@ public class Cell : MonoBehaviour
     // TODO: make reference to grid object (head)
 
     // float partResistance, voltageRequired;
-
-    public CellEvent onTriggerEnterEvent;
+    
     
     private void Start()
     {
@@ -60,107 +60,71 @@ public class Cell : MonoBehaviour
         }
 
         circuitGrid = FindObjectOfType<CircuitGrid>();
+        curColor = _renderer.material.color;
+        PrintCellDetails();
         
     }
-
-
-    private void Update()
-    {
-        
-    }
-
-    private void FixedUpdate()
-    {
-        if (occLevel >= 2)
-        {
-            Occ = true;
-            occLevel = 2;
-        }
-        
-        
-    }
+    
 
 //TODO: check for multiple grid entries
-private void OnTriggerEnter(Collider other)
-{   
-     
-    if (other.gameObject.CompareTag("Head") && headptr == null)
-    {
-        headptr = other.gameObject;
-        Debug.Log("Head attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
-        
-    }
-
-    if (other.gameObject.CompareTag("Tail") && tailptr == null)
-    {
-        tailptr = other.gameObject;
-        Debug.Log("Tail attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
-    }
-    
-    onTriggerEnterEvent?.Invoke(this);
-    isUpdated = true;
-    onTriggerEnterEvent?.Invoke(this);
-    
-     // Ec = other.gameObject.GetComponent<ElectricComponent>(); 
-     // personalMats = other.gameObject.GetComponent<Material>();
-    
-}
-
-private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Head"))
+    private void OnTriggerEnter(Collider other)
+    {   
+         
+        // Set Material of Cell
+        if (other.gameObject.CompareTag("Head") && headptr == null && nodeOcc.GetLength(0) < 2)
         {
+            Debug.Log("Head attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+            _renderer.material.color = occLevel >= 2 ? Color.green : curColor;
             occLevel++;
             headptr = other.gameObject.transform.parent.gameObject;
-            // other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
-
+            nodeOcc.SetValue(headptr, nodeOcc.GetLength(0)-1);
         }
 
-        if (other.gameObject.CompareTag("Tail"))
+        if (other.gameObject.CompareTag("Tail") && tailptr == null && nodeOcc.GetLength(0) < 2)
         {
+            Debug.Log("Tail attached at Cell: " + gameObject.name + " with coordinates x: " + x + ", y: " + y);
+            _renderer.material.color = occLevel >= 2 ? Color.green : curColor;
             occLevel++;
             tailptr = other.gameObject.transform.parent.gameObject;
-            //other.gameObject.GetComponent<ElectricComponent>().setPos(x, y);
-           
-
+            nodeOcc.SetValue(tailptr, nodeOcc.GetLength(0)-1);
         }
-
-        if (other.gameObject.CompareTag("Head") || other.gameObject.CompareTag("Tail"))
-        {
-            ElectricComponent component = other.gameObject.GetComponent<ElectricComponent>();
-          //  circuitGrid.AddConnection(component);
-        }
-
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
-
+        
+        isOverlapped = true;
+        onTriggerEnterEvent?.Invoke(this);
+         
     }
+
+
 
     private void OnTriggerExit(Collider other)
     {
-        occLevel--;
-        if (other.gameObject.CompareTag("Head") || other.gameObject.CompareTag("Tail"))
-        {
-            ElectricComponent component = other.gameObject.GetComponent<ElectricComponent>();
-            //circuitGrid.RemoveConnection(component);
-        }
+       
         
         if (other.gameObject == headptr)
         {
+            occLevel--;
             headptr = null; // Delete the reference
             Debug.Log("Head detached from Cell: " + gameObject.name);
         }
         else if (other.gameObject == tailptr)
         {
+            occLevel--;
             tailptr = null; // Delete the reference
             Debug.Log("Tail detached from Cell: " + gameObject.name);
         }
-
-        Ec = null;
-        personalMats = null;
-        isUpdated = false;
-        _renderer.material.color = occLevel >= 2 && Occ ? Color.green : Color.white;
+        
+        isOverlapped = false;
+        
+        _renderer.material.color = occLevel >= 2 ? Color.green : curColor;
     }
-
+    
+    public void PrintCellDetails()
+    {
+        if (isOverlapped)
+        {
+            Debug.Log($"Cell Updated: {gameObject.name} with coordinates x: {x}, y: {y}");
+            Debug.Log($"isPowered: {isPowered}, isGrounded: {isGrounded}, isInactive: {isInactive}");
+            // Add any other properties you want to print
+        }
+    }
 }
