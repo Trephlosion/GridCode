@@ -400,7 +400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6076631013251253008, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (18)
+      value: groundTile
       objectReference: {fileID: 0}
     - target: {fileID: 6854292929566398890, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_LocalScale.x
@@ -526,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515102744467305943, guid: db843db4ad8d0c24b8aeedac25f9c7fa, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (24)
+      value: tile5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1584,7 +1584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727034991912119501, guid: 434742c3aa6e7c04c919a9b596395edc, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (27)
+      value: tile4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1922,7 +1922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515102744467305943, guid: db843db4ad8d0c24b8aeedac25f9c7fa, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (17)
+      value: tile5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2286,7 +2286,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6076631013251253008, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (25)
+      value: groundTile
       objectReference: {fileID: 0}
     - target: {fileID: 6854292929566398890, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_LocalScale.x
@@ -2360,7 +2360,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6076631013251253008, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (13)
+      value: groundTile
       objectReference: {fileID: 0}
     - target: {fileID: 6854292929566398890, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_LocalScale.x
@@ -2556,7 +2556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502108496898897741, guid: 8f51003ea9fdcd94c946ad60baac732b, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1) 1
+      value: tile3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3435,7 +3435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6076631013251253008, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (9)
+      value: groundTile
       objectReference: {fileID: 0}
     - target: {fileID: 6854292929566398890, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_LocalScale.x
@@ -3829,7 +3829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727034991912119501, guid: 434742c3aa6e7c04c919a9b596395edc, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (15)
+      value: tile4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4158,7 +4158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502108496898897741, guid: 8f51003ea9fdcd94c946ad60baac732b, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1) 1 (4)
+      value: tile3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5674,7 +5674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450429965962747111, guid: 5be8772277ff1bb4eae3cdfce31528bb, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (20)
+      value: powerTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6514,7 +6514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450429965962747111, guid: 5be8772277ff1bb4eae3cdfce31528bb, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (21)
+      value: powerTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6852,7 +6852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727034991912119501, guid: 434742c3aa6e7c04c919a9b596395edc, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (11)
+      value: tile4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8034,7 +8034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515102744467305943, guid: db843db4ad8d0c24b8aeedac25f9c7fa, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (12)
+      value: tile5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8108,7 +8108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450429965962747111, guid: 5be8772277ff1bb4eae3cdfce31528bb, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (14)
+      value: powerTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8532,7 +8532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502108496898897741, guid: 8f51003ea9fdcd94c946ad60baac732b, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1) 1 (3)
+      value: tile3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8672,7 +8672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6697927029398535184, guid: 4701d6be92514a84cb75cfa1942bc29a, type: 3}
       propertyPath: m_Name
-      value: deco_pyramid_lamp (1)
+      value: myLamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8741,7 +8741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515102744467305943, guid: db843db4ad8d0c24b8aeedac25f9c7fa, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (8)
+      value: tile5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9732,7 +9732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727034991912119501, guid: 434742c3aa6e7c04c919a9b596395edc, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (23)
+      value: tile4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10366,7 +10366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6515102744467305943, guid: db843db4ad8d0c24b8aeedac25f9c7fa, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (16)
+      value: tile5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10576,7 +10576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 727034991912119501, guid: 434742c3aa6e7c04c919a9b596395edc, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (22)
+      value: tile4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10850,7 +10850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502108496898897741, guid: 8f51003ea9fdcd94c946ad60baac732b, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1) 1 (1)
+      value: tile3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10990,7 +10990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450429965962747111, guid: 5be8772277ff1bb4eae3cdfce31528bb, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (26)
+      value: powerTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11292,7 +11292,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6076631013251253008, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (19)
+      value: groundTile
       objectReference: {fileID: 0}
     - target: {fileID: 6854292929566398890, guid: 91456ca71f8a9a24786a2a85fd19ec50, type: 3}
       propertyPath: m_LocalScale.x
@@ -11870,7 +11870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502108496898897741, guid: 8f51003ea9fdcd94c946ad60baac732b, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (1) 1 (2)
+      value: tile3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12718,7 +12718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4450429965962747111, guid: 5be8772277ff1bb4eae3cdfce31528bb, type: 3}
       propertyPath: m_Name
-      value: arch_pyramid_floor_A_varC (10)
+      value: powerTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13052,67 +13052,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8871250467576042954, guid: 058a3760d91df344ca595d81a4c2fee2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 885471442365680190}
-    - targetCorrespondingSourceObject: {fileID: 8871250467576042954, guid: 058a3760d91df344ca595d81a4c2fee2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 885471442365680189}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058a3760d91df344ca595d81a4c2fee2, type: 3}
---- !u!1 &885471442365680188 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8871250467576042954, guid: 058a3760d91df344ca595d81a4c2fee2, type: 3}
-  m_PrefabInstance: {fileID: 885471442365680187}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &885471442365680189
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885471442365680188}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &885471442365680190
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885471442365680188}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4000001, y: 0.3464104, z: 1.2000003}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3197151407797986671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13229,67 +13170,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2076238706006969064, guid: d52dcf23ac6220441978e8164cfa391f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3526792299895038233}
-    - targetCorrespondingSourceObject: {fileID: 2076238706006969064, guid: d52dcf23ac6220441978e8164cfa391f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3526792299895038232}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d52dcf23ac6220441978e8164cfa391f, type: 3}
---- !u!1 &3526792299895038231 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2076238706006969064, guid: d52dcf23ac6220441978e8164cfa391f, type: 3}
-  m_PrefabInstance: {fileID: 3526792299895038230}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &3526792299895038232
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3526792299895038231}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &3526792299895038233
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3526792299895038231}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4000001, y: 0.3464104, z: 1.2000003}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5258005239677298590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13345,67 +13227,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5787750070517225922, guid: ff7121bc1bfed8f40bc7e83e54e478c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5258005239677298593}
-    - targetCorrespondingSourceObject: {fileID: 5787750070517225922, guid: ff7121bc1bfed8f40bc7e83e54e478c0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5258005239677298592}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff7121bc1bfed8f40bc7e83e54e478c0, type: 3}
---- !u!1 &5258005239677298591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5787750070517225922, guid: ff7121bc1bfed8f40bc7e83e54e478c0, type: 3}
-  m_PrefabInstance: {fileID: 5258005239677298590}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &5258005239677298592
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258005239677298591}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &5258005239677298593
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5258005239677298591}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.4000001, y: 0.3464104, z: 1.2000003}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6590890837635023974
 PrefabInstance:
   m_ObjectHideFlags: 0
