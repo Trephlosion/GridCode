@@ -51,6 +51,7 @@ public class UserInterface : MonoBehaviour
     public void QuitGame()
     {
         //will only work in a build
+        Debug.Log("quit won't work during run. Only in build");
         Application.Quit();
     }
 }
