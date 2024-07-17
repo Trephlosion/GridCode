@@ -13,6 +13,7 @@ public class UserInterface : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("");
         leftHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
     }
     void Update()
@@ -43,6 +44,7 @@ public class UserInterface : MonoBehaviour
 
     void OnMenuButtonPressed()
     {
+        Debug.Log("Menu Button is pressed");
         PauseMenu.SetActive(true);
     }
 
