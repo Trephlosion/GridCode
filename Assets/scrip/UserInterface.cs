@@ -9,6 +9,7 @@ public class UserInterface : MonoBehaviour
 {
     private UnityEngine.XR.InputDevice leftHandDevice;
     private bool menuButtonPressed;
+    public GameObject PauseMenu;
 
     void Start()
     {
@@ -42,7 +43,7 @@ public class UserInterface : MonoBehaviour
 
     void OnMenuButtonPressed()
     {
-
+        PauseMenu.SetActive(true);
     }
 
     public void QuitGame()
