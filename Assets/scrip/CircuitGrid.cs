@@ -39,9 +39,13 @@ public class CircuitGrid : MonoBehaviour
     
     public void UpdateGrid(Cell cell)
     {
-        int x = cell.x;
-        int y = cell.y;
-        GridArr[x, y] = cell;
+        // Redundant?
+        // int x = cell.x;
+        // int y = cell.y;
+        // GridArr[x, y] = cell;
+        
+        //print a representation of the currently occupied grid cells using 
+        
         PrintGrid();
     }
     
