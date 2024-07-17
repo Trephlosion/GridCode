@@ -40,10 +40,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 121387561765144975}
     m_Modifications:
+    - target: {fileID: 2066994763269788941, guid: 4947aa2f389534542a040354e32cefc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 3588211870015972715, guid: 4947aa2f389534542a040354e32cefc1, type: 3}
       propertyPath: m_Name
       value: wire
       objectReference: {fileID: 0}
+    - target: {fileID: 4328308189566477513, guid: 4947aa2f389534542a040354e32cefc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     - target: {fileID: 4330560484139488548, guid: 4947aa2f389534542a040354e32cefc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -84,6 +92,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5099845758309803067, guid: 4947aa2f389534542a040354e32cefc1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

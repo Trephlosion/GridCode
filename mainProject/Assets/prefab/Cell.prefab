@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -120,19 +120,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c947ec497927ce749905e4989ccec23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
   x: 0
   y: 0
   isPowered: 0
   isGrounded: 0
   isInactive: 0
-  Occ: 0
-  isUpdated: 0
+  isOverlapped: 0
+  headptr: {fileID: 0}
+  tailptr: {fileID: 0}
+  nodeOcc:
+  - {fileID: 0}
+  - {fileID: 0}
   current: 0
   resistance: 0
   instantaneousVoltage: 0
-  onTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!135 &6933894118138489530
 SphereCollider:
   m_ObjectHideFlags: 0
