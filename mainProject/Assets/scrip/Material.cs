@@ -12,7 +12,7 @@ using UnityEngine.XR.Interaction.Toolkit.UI.BodyUI;
 public class Material : MonoBehaviour
 {
    public float innateResistance, intakeVoltage, capacitance, inductance;
-   public bool isLed = false, isResistor = false, isLive = false, isWeak = false, isBurst = false;
+   private bool isLed = false, isResistor = false, isLive = false, isWeak = false, isBurst = false;
    public string nombre;
    private XRDirectInteractor interactor = null;
 

@@ -30,7 +30,7 @@ public class SNAP : MonoBehaviour
     {
         if (other.gameObject.CompareTag("conductor"))
         {
-            BroadcastMessage("wireSnapped");
+            // BroadcastMessage("wireSnapped");
             Debug.Log("wire snapped");
             explosion.SetActive(true);
             explosion.GetComponent<ParticleSystem>().Play();
@@ -38,7 +38,7 @@ public class SNAP : MonoBehaviour
 
         if (other.gameObject.CompareTag("resistor"))
         {
-            BroadcastMessage("resistorSnapped");
+            // BroadcastMessage("resistorSnapped");
             Debug.Log("resistor snapped");
             //validate resistance
             if (other.gameObject.GetComponent<Material>().innateResistance >= lampresistance)
@@ -78,6 +78,12 @@ public class SNAP : MonoBehaviour
         explosion.GetComponentInChildren<ParticleSystem>().Pause();
         explosion.SetActive(false);
         explosion.GetComponentInChildren<ParticleSystem>().Stop();
+        
+    }
+
+
+    public void elecSense()
+    {
         
     }
     
