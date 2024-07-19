@@ -11158,7 +11158,7 @@ GameObject:
   - component: {fileID: 1367309210}
   - component: {fileID: 1367309209}
   m_Layer: 0
-  m_Name: EmbersSmall (1)
+  m_Name: Ember
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
