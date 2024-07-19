@@ -5076,8 +5076,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6990989324393494980, guid: 49c9b487ca6160346b9e6b13ec44bc6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7512889185328942664}
   m_SourcePrefab: {fileID: 100100000, guid: 49c9b487ca6160346b9e6b13ec44bc6b, type: 3}
+--- !u!1 &2346838322440972041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6990989324393494980, guid: 49c9b487ca6160346b9e6b13ec44bc6b, type: 3}
+  m_PrefabInstance: {fileID: 2346838322440972040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &2364415890165910112
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12229,6 +12237,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 40964422493833617, guid: 49c9b487ca6160346b9e6b13ec44bc6b, type: 3}
   m_PrefabInstance: {fileID: 2346838322440972040}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7512889185328942664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2346838322440972041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7ff66fae2e284ca9a5be942436c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  innateResistance: 0
+  intakeVoltage: 0
+  capacitance: 0
+  inductance: 0
+  isLed: 0
+  isResistor: 0
+  isLive: 0
+  isWeak: 0
+  isBurst: 0
+  nombre: 
 --- !u!4 &7517624636242655040
 Transform:
   m_ObjectHideFlags: 0
