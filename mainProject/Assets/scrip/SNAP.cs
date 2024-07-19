@@ -18,7 +18,7 @@ using UnityEngine.XR.Interaction.Toolkit.Utilities;
 public class SNAP : MonoBehaviour
 {
     public float lampresistance = 3.0f;
-    [SerializeField] private GameObject grnLEDParticle, explosion;
+    [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2;
 
     public void Start()
     {
@@ -26,20 +26,27 @@ public class SNAP : MonoBehaviour
         explosion.SetActive(false);
     }
 
-    public void ColliderCheck(Collider other)
+    
+    public void OnTriggerEnter(Collider other)
     {
+        
         if (other.gameObject.CompareTag("conductor"))
         {
             // BroadcastMessage("wireSnapped");
+            lightning.SetActive(true);
             Debug.Log("wire snapped");
             explosion.SetActive(true);
             explosion.GetComponent<ParticleSystem>().Play();
+            //starting the lightning when the wire comes into contact with the grid
+           
         }
 
         if (other.gameObject.CompareTag("resistor"))
         {
+            lightning2.SetActive(true);
             // BroadcastMessage("resistorSnapped");
             Debug.Log("resistor snapped");
+            
             //validate resistance
             if (other.gameObject.GetComponent<Material>().innateResistance >= lampresistance)
             {
@@ -79,6 +86,9 @@ public class SNAP : MonoBehaviour
         explosion.SetActive(false);
         explosion.GetComponentInChildren<ParticleSystem>().Stop();
         
+        //deactivate lightning
+        lightning.SetActive(false);
+        lightning2.SetActive(false);
     }
 
 

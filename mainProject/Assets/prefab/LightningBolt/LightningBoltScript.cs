@@ -139,6 +139,16 @@ namespace DigitalRuby.LightningBolt
             }
         }
 
+        public void printActive()
+        {
+            Debug.Log("Lightning Active!");
+        }
+        
+        
+        public void printInactive()
+        {
+            Debug.Log("Lightning Inactive!!!");
+        }
         private void GenerateLightningBolt(Vector3 start, Vector3 end, int generation, int totalGenerations, float offsetAmount)
         {
             if (generation < 0 || generation > 8)
