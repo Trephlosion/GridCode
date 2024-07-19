@@ -239,7 +239,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 4531036632520886156}
+  m_AttachTransform: {fileID: 40964422493833617, guid: 907a6854b4f3db34981bf5301a8871f3, type: 3}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
@@ -328,11 +328,6 @@ MonoBehaviour:
   intakeVoltage: 0
   capacitance: 0
   inductance: 0
-  isLed: 0
-  isResistor: 0
-  isLive: 0
-  isWeak: 0
-  isBurst: 0
   nombre: 
 --- !u!1 &2749027340976463899
 GameObject:

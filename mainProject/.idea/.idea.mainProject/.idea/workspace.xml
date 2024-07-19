@@ -7,10 +7,7 @@
     <list default="true" id="b67b9be3-cc28-41e4-9fcb-9b2d072cf124" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RealControllers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RealControllers.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WireScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WireScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/prefab/LightningBolt/LightningBoltScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/LightningBolt/LightningBoltScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/resistor1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/resistor1.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/scrip/SNAP.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/scrip/SNAP.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +95,7 @@
       <updated>1721253717465</updated>
       <workItem from="1721253719402" duration="11000" />
       <workItem from="1721415021267" duration="1194000" />
-      <workItem from="1721417062270" duration="5890000" />
+      <workItem from="1721417062270" duration="9341000" />
     </task>
     <servers />
   </component>

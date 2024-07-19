@@ -18,7 +18,8 @@ using UnityEngine.XR.Interaction.Toolkit.Utilities;
 public class SNAP : MonoBehaviour
 {
     public float lampresistance = 3.0f;
-    [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2;
+    [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2, batteryToResistorLight, batteryToWireLight, closedResistorLight, closedWireLight, powerLightning
+        ;
 
     public void Start()
     {
@@ -29,21 +30,31 @@ public class SNAP : MonoBehaviour
     
     public void OnTriggerEnter(Collider other)
     {
+        //stop power lightning showing
+        powerLightning.SetActive(false);
         
         if (other.gameObject.CompareTag("conductor"))
         {
-            // BroadcastMessage("wireSnapped");
+            //lightning showing when wire contacts the grid
             lightning.SetActive(true);
+            batteryToWireLight.SetActive(true);
+            closedWireLight.SetActive(true);
+            
+            // BroadcastMessage("wireSnapped");
             Debug.Log("wire snapped");
             explosion.SetActive(true);
             explosion.GetComponent<ParticleSystem>().Play();
-            //starting the lightning when the wire comes into contact with the grid
+            
            
         }
 
         if (other.gameObject.CompareTag("resistor"))
         {
+            //starting the lightning when the resistor comes into contact with the grid
             lightning2.SetActive(true);
+            batteryToResistorLight.SetActive(true);
+            closedResistorLight.SetActive(true);
+            
             // BroadcastMessage("resistorSnapped");
             Debug.Log("resistor snapped");
             
@@ -89,6 +100,13 @@ public class SNAP : MonoBehaviour
         //deactivate lightning
         lightning.SetActive(false);
         lightning2.SetActive(false);
+        batteryToResistorLight.SetActive(false);
+        closedResistorLight.SetActive(false);
+        batteryToWireLight.SetActive(false);
+        closedWireLight.SetActive(false);
+        
+        //restart power lightning showing
+        powerLightning.SetActive(true);
     }
 
 
