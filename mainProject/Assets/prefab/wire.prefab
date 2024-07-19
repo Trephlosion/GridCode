@@ -246,9 +246,10 @@ GameObject:
   - component: {fileID: 7755909921692348496}
   - component: {fileID: 4663923200461960626}
   - component: {fileID: 5212398631255094618}
+  - component: {fileID: 8836255494348044792}
   m_Layer: 0
   m_Name: wire
-  m_TagString: Untagged
+  m_TagString: conductor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -566,3 +567,25 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &8836255494348044792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990989324393494980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7ff66fae2e284ca9a5be942436c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  innateResistance: 0
+  intakeVoltage: 0
+  capacitance: 0
+  inductance: 0
+  isLed: 0
+  isResistor: 0
+  isLive: 0
+  isWeak: 0
+  isBurst: 0
+  nombre: 

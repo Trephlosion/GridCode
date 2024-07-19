@@ -5913,6 +5913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: wire
       objectReference: {fileID: 0}
+    - target: {fileID: 6990989324393494980, guid: 49c9b487ca6160346b9e6b13ec44bc6b, type: 3}
+      propertyPath: m_TagString
+      value: conductor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

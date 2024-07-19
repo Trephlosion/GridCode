@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 548954585299910265}
   - component: {fileID: 4767053656736706610}
   - component: {fileID: 5644448581741764369}
+  - component: {fileID: -6661146901069137583}
   m_Layer: 0
   m_Name: resistor1
-  m_TagString: Untagged
+  m_TagString: resistor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,6 +312,28 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 3
   m_ScaleMultiplier: 0.25
+--- !u!114 &-6661146901069137583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050977941417740906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7ff66fae2e284ca9a5be942436c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  innateResistance: 3
+  intakeVoltage: 0
+  capacitance: 0
+  inductance: 0
+  isLed: 0
+  isResistor: 0
+  isLive: 0
+  isWeak: 0
+  isBurst: 0
+  nombre: 
 --- !u!1 &2749027340976463899
 GameObject:
   m_ObjectHideFlags: 0
