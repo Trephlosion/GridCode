@@ -14660,6 +14660,7 @@ GameObject:
   - component: {fileID: 2742629044257202409}
   - component: {fileID: 5049615478248856372}
   - component: {fileID: 3236088842095159822}
+  - component: {fileID: 9060255463382190291}
   m_Layer: 0
   m_Name: Grid Socket
   m_TagString: Untagged
@@ -14667,6 +14668,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9060255463382190291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9060255463382190290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00940153c0afe424384f2e2b0bc92316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampresistance: 3
+  grnLEDParticle: {fileID: 0}
+  explosion: {fileID: 0}
 --- !u!23 &9123018977213938575
 MeshRenderer:
   m_ObjectHideFlags: 0
