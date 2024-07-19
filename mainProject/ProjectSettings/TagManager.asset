@@ -13,9 +13,11 @@ TagManager:
   - Head
   - Tail
   - Compoonent
-  - LED info
   - Floor
   - Wall
+  - conductor
+  - resistor
+  - partyhardy
   layers:
   - Default
   - TransparentFX
