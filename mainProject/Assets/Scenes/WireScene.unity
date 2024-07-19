@@ -1529,6 +1529,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac119fbcda938f49960e9e22fa5a72c, type: 3}
+--- !u!1 &895701968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8228948783467178356, guid: fac119fbcda938f49960e9e22fa5a72c, type: 3}
+  m_PrefabInstance: {fileID: 895701967}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1050978665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1842,6 +1847,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7218d078b8d537478332ee4fc449bd8, type: 3}
+--- !u!1 &1226435979 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1296140690801732099, guid: f7218d078b8d537478332ee4fc449bd8, type: 3}
+  m_PrefabInstance: {fileID: 1226435978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1511444714
 GameObject:
   m_ObjectHideFlags: 0
@@ -15560,8 +15570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampresistance: 3
-  grnLEDParticle: {fileID: 0}
-  explosion: {fileID: 0}
+  grnLEDParticle: {fileID: 1226435979}
+  explosion: {fileID: 895701968}
 --- !u!23 &9123018977213938575
 MeshRenderer:
   m_ObjectHideFlags: 0
