@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b67b9be3-cc28-41e4-9fcb-9b2d072cf124" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/HDRP_Package.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/Standard_Package.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/URP_2022.3DepthIssue.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/URP_2DPackage.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/URP_Package.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Piloto Studio/Shaders/URP_WEBGLFIX.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/socket tet.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/socket tet.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +107,7 @@
       <workItem from="1721253719402" duration="11000" />
       <workItem from="1721415021267" duration="1194000" />
       <workItem from="1721417062270" duration="9341000" />
-      <workItem from="1721672503439" duration="4092000" />
+      <workItem from="1721672503439" duration="5395000" />
     </task>
     <servers />
   </component>
