@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5acc85e8f6b8faa4c80735f4b4ab5557, type: 2}
     - target: {fileID: 919132149155446097, guid: c75aef32b710cc348bad5d1835589f85, type: 3}
       propertyPath: m_Name
-      value: deco_pyramid_lamp
+      value: myLamp
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c75aef32b710cc348bad5d1835589f85, type: 3}
       propertyPath: m_StaticEditorFlags
