@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67b9be3-cc28-41e4-9fcb-9b2d072cf124" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Electricity.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/socket tet.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/socket tet.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/materials/blue 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/blue 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/materials/blue 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/blue 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/materials/blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/blue.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Electricity_Backup.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Electricity_Backup.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_decos.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_decos.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_varA.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_varA.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_varB.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ZerinLabs_enviroKit_RetroPyramid/Materials/mat_pyramid_varB.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/materials/Materials/Artboard 1@2x.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/Materials/Artboard 1@2x.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/materials/Materials/b2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/Materials/b2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/materials/Materials/b3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/materials/Materials/b3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/prefab/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/prefab/Canvas.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +117,7 @@
       <workItem from="1721417062270" duration="9341000" />
       <workItem from="1721672503439" duration="5395000" />
       <workItem from="1721747847282" duration="15000" />
+      <workItem from="1721855435985" duration="2880000" />
     </task>
     <servers />
   </component>

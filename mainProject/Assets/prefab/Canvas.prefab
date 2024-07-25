@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 1207172961672160825}
   - component: {fileID: 7851741463010641854}
   - component: {fileID: 3984082019534157954}
+  - component: {fileID: 6248900317367586307}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -267,6 +268,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6248900317367586307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742535372210890519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b3d17eeb2e6bc47ada81d8f7f638d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_GazeInteractor: {fileID: 0}
+  m_FallbackDivergence: 60
+  m_HideCursorWithNoActiveRays: 1
+  m_RayInteractors: []
+  m_AimAssistRequiredAngle: 30
+  m_AimAssistRequiredSpeed: 0.25
+  m_AimAssistPercent: 0.8
+  m_AimAssistMaxSpeedPercent: 10
 --- !u!1 &2295612951741226073
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f562b88fd6603a84681a9db485a4d4af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -812,6 +833,10 @@ PrefabInstance:
     - target: {fileID: 6990989324393494980, guid: 907a6854b4f3db34981bf5301a8871f3, type: 3}
       propertyPath: m_Name
       value: resistor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6990989324393494980, guid: 907a6854b4f3db34981bf5301a8871f3, type: 3}
+      propertyPath: m_TagString
+      value: Compoonent
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4663923200461960626, guid: 907a6854b4f3db34981bf5301a8871f3, type: 3}
