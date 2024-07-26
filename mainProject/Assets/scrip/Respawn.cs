@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Respawn : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        this.game
+        
     }
 
     // Update is called once per frame
-    void OnTriggerExit()
+    void Update()
     {
-       this.gameObject 
+        
     }
 }
