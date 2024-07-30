@@ -13,6 +13,6 @@ Controls:
 
           Left Hand                                                  Right Hand
           hand trigger --> grab object                               hand trigger --> grab object
-          thumb stick --> continuous movement (Walking)              thumb stick -->
+          thumb stick --> continuous movement (Walking)              thumb stick -->  verticle movement: Teleport, horizontal movement: camera rotation (non-continuous)
           index finger trigger --> select menu/UI buttons            index finger trigger --> select menu/UI buttons
                                                                      Reserved --> allows user to exit game and return to oculus menus
