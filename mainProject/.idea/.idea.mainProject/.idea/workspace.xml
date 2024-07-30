@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b67b9be3-cc28-41e4-9fcb-9b2d072cf124" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.mainProject/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/scrip/NewBehaviourScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/scrip/NewBehaviourScript.cs.meta" beforeDir="false" />
+>>>>>>> 0de4e3443e87aeecb0b3b43982665f5418faf827
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +114,13 @@
       <workItem from="1721417062270" duration="9341000" />
       <workItem from="1721672503439" duration="5395000" />
       <workItem from="1721747847282" duration="15000" />
+<<<<<<< HEAD
       <workItem from="1721850798383" duration="614000" />
       <workItem from="1722031440757" duration="1212000" />
+=======
+      <workItem from="1721855435985" duration="2880000" />
+      <workItem from="1721919340902" duration="1245000" />
+>>>>>>> 0de4e3443e87aeecb0b3b43982665f5418faf827
     </task>
     <servers />
   </component>
