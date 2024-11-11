@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIDevAlee.unity
     guid: 6602ef5063c7b2e4dbd2c465387b907a
+  - enabled: 1
+    path: Assets/Scenes/Electricity_Backup.unity
+    guid: 254a3dbcbf0c25543b49f338be55c6cb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1b75e76b49b0222488ad2711c3615bdd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3eba75a6f4c451a49b9e67692a86d18d, type: 2}
