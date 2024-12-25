@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SpiceSharp</id>
+    <version>3.2.3+HEAD.34484fa</version>
+    <title>Spice#</title>
+    <authors>Sven Boulanger</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>logo_full.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/SpiceSharp/SpiceSharp</projectUrl>
+    <description>Spice# is a circuit simulator based on and improved from Spice 3f5 by Berkeley. The framework allows custom components and simulations to be added.</description>
+    <releaseNotes>Refer to the GitHub release for release notes.</releaseNotes>
+    <tags>circuit electronics netlist parser spice simulator simulation ode solver design</tags>
+    <repository type="git" url="https://github.com/SpiceSharp/SpiceSharp" commit="34484fa6c66d636f6983626a0a770f75c0484553" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
