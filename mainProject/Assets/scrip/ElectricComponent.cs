@@ -9,6 +9,7 @@ public class ElectricComponent : MonoBehaviour
    //private Material properties;
    //private Special functions;
    
+   
    //TODO: gameobject pointer that points to the cell that it occupies
    private bool isHeld;
    //make true if its being held iin order to not snap

@@ -18,8 +18,7 @@ using UnityEngine.XR.Interaction.Toolkit.Utilities;
 public class SNAP : MonoBehaviour
 {
     public float lampresistance = 3.0f;
-    [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2, batteryToResistorLight, batteryToWireLight, closedResistorLight, closedWireLight, powerLightning
-        ;
+    [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2, batteryToResistorLight, batteryToWireLight, closedResistorLight, closedWireLight, powerLightning;
 
     public void Start()
     {
@@ -59,15 +58,14 @@ public class SNAP : MonoBehaviour
             Debug.Log("resistor snapped");
             
             //validate resistance
-            if (other.gameObject.GetComponent<Material>().innateResistance >= lampresistance)
+            if ((float)other.gameObject.GetComponent<Material>().innateResistance >= lampresistance)
             {
                 //start weak lamp
                 grnLEDParticle.SetActive(true);
                 grnLEDParticle.GetComponent<ParticleSystem>().Play();
 
             }
-            else if (Mathf.Approximately(other.gameObject.GetComponent<Material>().innateResistance,
-                         lampresistance))
+            else if (Mathf.Approximately((float)other.gameObject.GetComponent<Material>().innateResistance, lampresistance))
             {
                 // start active lamp
                 grnLEDParticle.SetActive(true);
@@ -75,7 +73,7 @@ public class SNAP : MonoBehaviour
                 // particle.GetComponent<ParticleSystem>().main.startColor = Color.FromArgb(130, 255, 53);
 
             }
-            else if (other.gameObject.GetComponent<Material>().innateResistance <= lampresistance)
+            else if ((float)other.gameObject.GetComponent<Material>().innateResistance <= lampresistance)
             {
                 // start explosion
                 explosion.SetActive(true);

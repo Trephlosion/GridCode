@@ -19,6 +19,7 @@ namespace SpiceSimulation
         // Update is called once per frame
         void Update()
         {
+            
             SPICETest();
         }
 
@@ -26,6 +27,8 @@ namespace SpiceSimulation
         {
             // Build the circuit
             var ckt = new Circuit(
+                // some kind of loop to create the grid of nodes
+                
                 new VoltageSource("V1", "in", "0", 1.0),
                 new SpiceSharp.Components.Resistor("R1", "in", "out", 1.0e4),
                 new SpiceSharp.Components.Resistor("R2", "out", "0", 2.0e4)
@@ -35,10 +38,15 @@ namespace SpiceSimulation
             // Run the simulation
             foreach (int exportType in dc.Run(ckt))
             {
-                //Debug.Log("SPICE# says:" + dc.GetVoltage("out"));
-                //Console.WriteLine(dc.GetVoltage("out"));
+                
+                Debug.Log("SPICE# says:" + dc.GetVoltage("out"));
+                Console.WriteLine(dc.GetVoltage("out"));
             }
             
         }
+        
+        
+        
+        
     }
 }
