@@ -3,8 +3,10 @@ using SpiceSharp.Simulations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SpiceSharp.Validation;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using Object = UnityEngine.Object;
@@ -162,7 +164,7 @@ namespace SpiceSharp
         // }
 
 
-        void OnMouseDown()
+void OnMouseDown()
 {
     // Clone the existing circuit
     Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
@@ -171,14 +173,26 @@ namespace SpiceSharp
     // Add a voltage source to the cloned circuit
     VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
     clonedCircuit.Add(battery);
-    // connect the rows across to make the final circuit 
-    // conncet row 1 to row 2 to row 4
 
     // Add 2 resistors to the cloned circuit
     Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
     Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
+    clonedCircuit.Add(resistor1);
+    clonedCircuit.Add(resistor2);
 
-    DC tester = new DC("dc", "V1", (double)1.0, (double)5.0, (double).1);
+    DC tester = new DC("dc", "V1", 0.0, 5.0, 0.1);
+
+    /*// Validate the circuit
+    var rules = new Validation.IRules();
+    var violations = tester.Validate(rules, clonedCircuit);
+    if (violations.Count > 0)
+    {
+        foreach (var violation in violations)
+        {
+            Debug.LogError("Validation error: " + violation);
+        }
+        return; // Exit if there are validation errors
+    }*/
 
     // Run the simulation
     foreach (int exportType in tester.Run(clonedCircuit))
@@ -192,8 +206,13 @@ namespace SpiceSharp
                                                + ":" + (randomNodeIndex % 5));
         
         
-            
-            
+        //CHEC THE VALIDIDITY OF THE CIRCUIT
+        IRule.Violations.get() = tester.Validate(clonedCircuit);
+        
+        
+
+        
+        
     }
 }
 
