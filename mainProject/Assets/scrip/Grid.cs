@@ -15,18 +15,32 @@ namespace SpiceSharp
     {
         private Circuit currentCircuit;
 
+        public static bool GetMouseButtonDown(int button)
+        {
+            throw new NotImplementedException();
+        }
+        
+        
+        
+        
         // Start is called before the first frame update
         void Start()
         {
             // Create the breadboard
             // Spawn an array of objects that will be the wires and nodes
             GridSpawn();
+            
         }
 
         // Update is called once per frame
         void Update()
         {
 
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnMouseDown();
+            }
+            
         }
 
         public void GridSpawn()
@@ -49,7 +63,7 @@ namespace SpiceSharp
                     node.AddComponent<NodeChecker>();
 
                     // Spawn column wires (might not be needed)
-                    if (i < 4)
+                    /*if (i < 4)
                     {
                         GameObject columnWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
                         columnWire.transform.position = new Vector3(i + 0.5f, 0, j);
@@ -58,8 +72,8 @@ namespace SpiceSharp
                         columnWire.name = "ColumnWire: " + i + ":" + j + " to " + (i + 1) + ":" + j;
                         columnWire.transform.parent = gridParent.transform;
                         Debug.Log("New Column Wire: " + columnWire);
-                    }
-
+                    }*/
+                    
                     if (j < 4)
                     {
                         // Create the rowed wires
@@ -90,6 +104,15 @@ namespace SpiceSharp
 
                         currentCircuit.Add(newWire);
                         Debug.Log("New Row Wire: " + rowWire + "\nNew SpiceSharp Wire: " + newWire);
+                        
+                        /*// Make the cylinder glow
+                        Renderer renderer = rowWire.GetComponent<Renderer>();
+                        if (renderer != null)
+                        {
+                            Material material = renderer.material;
+                            material.EnableKeyword("_EMISSION");
+                            material.SetColor("_EmissionColor", Color.green);
+                        }*/
                     }
                 }
             }
@@ -101,8 +124,13 @@ namespace SpiceSharp
             Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
 
             // Build the circuit
-            VoltageSource battery = new VoltageSource("V1", "1", "0", 1.0);
+            // Add a voltage source to the cloned circuit
+            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
             clonedCircuit.Add(battery);
+            
+            // Add 2 resistors to the cloned circuit
+            Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
+            Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
 
             DC tester = new DC("dc", "V1", 5.0, 5.0, 0);
 
@@ -115,7 +143,8 @@ namespace SpiceSharp
 
                 
                 Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
-                                                           + " @ Node 1");
+                                                           + " @ Node: " + (randomNodeIndex / 5) 
+                                                           + ":" + (randomNodeIndex % 5));
             }
         }
 
@@ -127,10 +156,42 @@ namespace SpiceSharp
             
         }
 
-        public void OnClick()
-        {
-            OnClickTest();
-        }
+        // public void OnClick()
+        // {
+        //     OnClickTest();
+        // }
+
+
+        void OnMouseDown()
+{
+    // Clone the existing circuit
+    Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
+
+    // Build the circuit
+    // Add a voltage source to the cloned circuit
+    VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
+    clonedCircuit.Add(battery);
+    // connect the rows across to make the final circuit 
+    // conncet row 1 to row 2 to row 4
+
+    // Add 2 resistors to the cloned circuit
+    Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
+    Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
+
+    DC tester = new DC("dc", "V1", 5.0, 5.0, 0);
+
+    // Run the simulation
+    foreach (int exportType in tester.Run(clonedCircuit))
+    {
+        // Choose a random node to test voltage
+        int randomNodeIndex = UnityEngine.Random.Range(0, 5 * 5); // Assuming a 5x5 grid
+        string randomNodeName = "Node: " + (randomNodeIndex / 5) + ":" + (randomNodeIndex % 5);
+
+        Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
+                                               + " @ Node: " + (randomNodeIndex / 5)
+                                               + ":" + (randomNodeIndex % 5));
+    }
+}
 
         public void SPICETest()
         {
@@ -143,11 +204,11 @@ namespace SpiceSharp
             var dc = new DC("dc", "V1", 0.0, 5.0, 0.001);
 
             // Run the simulation
-            /*foreach (int exportType in dc.Run(ckt))
+            foreach (int exportType in dc.Run(ckt))
             {
                 Debug.Log("SPICE# says:" + dc.GetVoltage("out"));
                 Console.WriteLine(dc.GetVoltage("out"));
-            }*/
+            }
         }
 
         public void OnDestroy()
