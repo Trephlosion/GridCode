@@ -178,7 +178,7 @@ namespace SpiceSharp
     Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
     Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
 
-    DC tester = new DC("dc", "V1", 5.0, 5.0, 0);
+    DC tester = new DC("dc", "V1", (double)1.0, (double)5.0, (double).1);
 
     // Run the simulation
     foreach (int exportType in tester.Run(clonedCircuit))
@@ -190,6 +190,10 @@ namespace SpiceSharp
         Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
                                                + " @ Node: " + (randomNodeIndex / 5)
                                                + ":" + (randomNodeIndex % 5));
+        
+        
+            
+            
     }
 }
 
@@ -211,10 +215,7 @@ namespace SpiceSharp
             }
         }
 
-        public void OnDestroy()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
     public class SpiceWireComponent : MonoBehaviour
