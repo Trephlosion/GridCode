@@ -1,5 +1,6 @@
 using SpiceSharp.Components;
 using SpiceSharp.Simulations;
+using SpiceSharp.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,17 +22,17 @@ namespace SpiceSharp
         {
             throw new NotImplementedException();
         }
-        
-        
-        
-        
+
+
+
+
         // Start is called before the first frame update
         void Start()
         {
             // Create the breadboard
             // Spawn an array of objects that will be the wires and nodes
             GridSpawn();
-            
+
         }
 
         // Update is called once per frame
@@ -42,7 +43,7 @@ namespace SpiceSharp
             {
                 OnMouseDown();
             }
-            
+
         }
 
         public void GridSpawn()
@@ -75,7 +76,7 @@ namespace SpiceSharp
                         columnWire.transform.parent = gridParent.transform;
                         Debug.Log("New Column Wire: " + columnWire);
                     }*/
-                    
+
                     if (j < 4)
                     {
                         // Create the rowed wires
@@ -92,7 +93,7 @@ namespace SpiceSharp
                             "R: " + i + ":" + j + " to " + i + ":" + (j + 1);
                         rowWire.GetComponent<SpiceWireComponent>().posNode = "Node: " + i + ":" + j;
                         rowWire.GetComponent<SpiceWireComponent>().negNode = "Node: " + i + ":" + (j + 1);
-                        
+
 
                         var newWire = new Components.Resistor(rowWire.GetComponent<SpiceWireComponent>().nombre,
                             rowWire.GetComponent<SpiceWireComponent>().posNode,
@@ -106,7 +107,7 @@ namespace SpiceSharp
 
                         currentCircuit.Add(newWire);
                         Debug.Log("New Row Wire: " + rowWire + "\nNew SpiceSharp Wire: " + newWire);
-                        
+
                         /*// Make the cylinder glow
                         Renderer renderer = rowWire.GetComponent<Renderer>();
                         if (renderer != null)
@@ -129,7 +130,7 @@ namespace SpiceSharp
             // Add a voltage source to the cloned circuit
             VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
             clonedCircuit.Add(battery);
-            
+
             // Add 2 resistors to the cloned circuit
             Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
             Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
@@ -143,10 +144,8 @@ namespace SpiceSharp
                 int randomNodeIndex = UnityEngine.Random.Range(0, 5 * 5); // Assuming a 5x5 grid
                 string randomNodeName = "Node: " + (randomNodeIndex / 5) + ":" + (randomNodeIndex % 5);
 
-                
-                Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
-                                                           + " @ Node: " + (randomNodeIndex / 5) 
-                                                           + ":" + (randomNodeIndex % 5));
+
+                //Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName) + " @ Node: " + (randomNodeIndex / 5) + ":" + (randomNodeIndex % 5));
             }
         }
 
@@ -155,7 +154,7 @@ namespace SpiceSharp
             // Test the circuit to check to see if it has a Voltage Source
             // if the circuit has a voltage source, then run a simulation
             // if the circuit does not have a voltage source, then throw an error and turn the wires red until a new simulation is run.
-            
+
         }
 
         // public void OnClick()
@@ -164,57 +163,68 @@ namespace SpiceSharp
         // }
 
 
-void OnMouseDown()
-{
-    // Clone the existing circuit
-    Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
-
-    // Build the circuit
-    // Add a voltage source to the cloned circuit
-    VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
-    clonedCircuit.Add(battery);
-
-    // Add 2 resistors to the cloned circuit
-    Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
-    Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
-    clonedCircuit.Add(resistor1);
-    clonedCircuit.Add(resistor2);
-
-    DC tester = new DC("dc", "V1", 0.0, 5.0, 0.1);
-
-    /*// Validate the circuit
-    var rules = new Validation.IRules();
-    var violations = tester.Validate(rules, clonedCircuit);
-    if (violations.Count > 0)
-    {
-        foreach (var violation in violations)
+        void OnMouseDown()
         {
-            Debug.LogError("Validation error: " + violation);
+            // Clone the existing circuit
+            Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
+
+            // Build the circuit
+            // Add a voltage source to the cloned circuit
+            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
+            clonedCircuit.Add(battery);
+
+            // Add 2 resistors to the cloned circuit
+            Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
+            Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
+            clonedCircuit.Add(resistor1);
+            clonedCircuit.Add(resistor2);
+
+            DC tester = new DC("dc", "V1", 0.0, 5.0, 0.1);
+
+            // Validate the circuit
+            //var rules = new SpiceSharp.Validation.IRules();
+            //var violations = tester.Validate(rules, clonedCircuit);
+
+            //if (tester.BaseRules.ViolationCount > 0)
+
+            IRules rulesViolated = clonedCircuit.Validate();
+            
+            if (rulesViolated.ViolationCount > 0)
+            {
+                foreach (var violation in rulesViolated.Violations)
+                {
+                    // Right now, the most common errors are FloatingNodeRuleViolations, with one VariablePresenceRuleViolation.
+                    // *Lemongrab voice* I am going to print out the name of each Node that is committing the SINFUL CRIME of being a floating node, so we can point at them and laugh.
+                    if(violation is SpiceSharp.Validation.FloatingNodeRuleViolation)
+                    {
+                        Debug.Log("SIN COMMITTED (FloatingNodeRuleViolation): " + ((FloatingNodeRuleViolation)violation).FloatingVariable.Name);
+                    }
+                    if (violation is SpiceSharp.Validation.VariablePresenceRuleViolation)
+                    {
+                        Debug.Log("SIN COMMITTED (VariablePresenceRuleViolation): " + ((VariablePresenceRuleViolation)violation).Variable.Name);
+                    }
+
+                }
+                return; // Exit if there are validation errors
+            }
+
+            // Run the simulation
+            foreach (int exportType in tester.Run(clonedCircuit))
+            {
+                // Choose a random node to test voltage
+                int randomNodeIndex = UnityEngine.Random.Range(0, 5 * 5); // Assuming a 5x5 grid
+                string randomNodeName = "Node: " + (randomNodeIndex / 5) + ":" + (randomNodeIndex % 5);
+
+                Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
+                                                       + " @ Node: " + (randomNodeIndex / 5)
+                                                       + ":" + (randomNodeIndex % 5));
+
+
+                //CHEC THE VALIDIDITY OF THE CIRCUIT
+                //IRule.Violations.get() = tester.Validate(clonedCircuit);
+
+            }
         }
-        return; // Exit if there are validation errors
-    }*/
-
-    // Run the simulation
-    foreach (int exportType in tester.Run(clonedCircuit))
-    {
-        // Choose a random node to test voltage
-        int randomNodeIndex = UnityEngine.Random.Range(0, 5 * 5); // Assuming a 5x5 grid
-        string randomNodeName = "Node: " + (randomNodeIndex / 5) + ":" + (randomNodeIndex % 5);
-
-        Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
-                                               + " @ Node: " + (randomNodeIndex / 5)
-                                               + ":" + (randomNodeIndex % 5));
-        
-        
-        //CHEC THE VALIDIDITY OF THE CIRCUIT
-        IRule.Violations.get() = tester.Validate(clonedCircuit);
-        
-        
-
-        
-        
-    }
-}
 
         public void SPICETest()
         {
@@ -234,7 +244,7 @@ void OnMouseDown()
             }
         }
 
-        
+
     }
 
     public class SpiceWireComponent : MonoBehaviour
