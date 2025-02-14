@@ -14,8 +14,14 @@ using Object = UnityEngine.Object;
 
 namespace SpiceSharp
 {
-    public class Grid : MonoBehaviour
+    public class Grid1 : MonoBehaviour
     {
+        public GameObject groundTile;
+        public GameObject powerTile;
+        public GameObject normalTile;
+        public GameObject batteryObject;
+        public GameObject wire;
+
         private Circuit currentCircuit;
 
         public static bool GetMouseButtonDown(int button)
@@ -51,6 +57,11 @@ namespace SpiceSharp
             // Create an empty GameObject to hold the grid
             GameObject gridParent = new GameObject("Grid");
 
+            //Create a battery GameObject
+            GameObject battery = Instantiate(batteryObject);
+            battery.transform.position = new Vector3(1.0f, 0.0f, -1.5f);
+            battery.transform.rotation = Quaternion.Euler(0, 90, 0);
+
             // Spawn an array of objects that will be the wires and nodes
             // 5 x 5 base breadboard
             for (int i = 0; i < 5; i++)
@@ -58,7 +69,21 @@ namespace SpiceSharp
                 for (int j = 0; j < 5; j++)
                 {
                     // Spawn the nodes
-                    GameObject node = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    GameObject node = new GameObject();
+                    //GameObject node = GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+                    if (i == 0)
+                    {
+                        node = Instantiate(groundTile);
+                    }
+                    else if (i == 4)
+                    {
+                        node = Instantiate(powerTile);
+                    }
+                    else {
+                        node = Instantiate(normalTile);
+                    }
+                    
                     node.transform.position = new Vector3(i, 0, j);
                     node.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                     node.name = "Node: " + i + ":" + j;
@@ -76,13 +101,18 @@ namespace SpiceSharp
                         columnWire.transform.parent = gridParent.transform;
                         Debug.Log("New Column Wire: " + columnWire);
                     }*/
+                    
 
                     if (j < 4)
                     {
                         // Create the rowed wires
-                        GameObject rowWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                        rowWire.transform.position = new Vector3(i, 0, j + 0.5f);
-                        rowWire.transform.rotation = Quaternion.Euler(90, 0, 0);
+                        //GameObject rowWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                        GameObject rowWire = Instantiate(wire);
+
+                        rowWire.transform.position = new Vector3(i, -0.381f, j + 0.5f);
+                        //rowWire.transform.position = new Vector3(i, 0, j + 0.5f);
+                        //rowWire.transform.rotation = Quaternion.Euler(90, 0, 0);
+                        rowWire.transform.rotation = Quaternion.Euler(0, 90, 0);
                         rowWire.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
                         rowWire.name = "RowWire: " + i + ":" + j + " to " + i + ":" + (j + 1);
                         rowWire.transform.parent = gridParent.transform;
@@ -194,7 +224,6 @@ namespace SpiceSharp
                 foreach (var violation in rulesViolated.Violations)
                 {
                     // Right now, the most common errors are FloatingNodeRuleViolations, with one VariablePresenceRuleViolation.
-                    // *Lemongrab voice* I am going to print out the name of each Node that is committing the SINFUL CRIME of being a floating node, so we can point at them and laugh.
                     if(violation is SpiceSharp.Validation.FloatingNodeRuleViolation)
                     {
                         Debug.Log("SIN COMMITTED (FloatingNodeRuleViolation): " + ((FloatingNodeRuleViolation)violation).FloatingVariable.Name);
@@ -247,11 +276,11 @@ namespace SpiceSharp
 
     }
 
-    public class SpiceWireComponent1 : MonoBehaviour
-    {
-        public string nombre;
-        public string posNode;
-        public string negNode;
-        public double innateResistance = 1.0e-4;
-    }
+    //public class SpiceWireComponent1 : MonoBehaviour
+    //{
+    //    public string nombre;
+    //    public string posNode;
+    //    public string negNode;
+    //    public double innateResistance = 1.0e-4;
+    //}
 }
