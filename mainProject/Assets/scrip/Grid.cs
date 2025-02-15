@@ -51,6 +51,7 @@ namespace SpiceSharp
             // Create an empty GameObject to hold the grid
             GameObject gridParent = new GameObject("Grid");
             var gridsize = 5;
+            // GENERATE OBJECTS IN THE SCENE AND IMPORT THE CLEAR VALUES FOR THE LEVELS
 
             // Spawn an array of objects that will be the wires and nodes
             // 5 x 5 base breadboard
@@ -223,8 +224,10 @@ namespace SpiceSharp
                                                        + ":" + (randomNodeIndex % 5));
                 
                 Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage("Node: 2:1") + " @ Node: " + (2) + ":" + (1));
+                
 
 
+                //TODO: STORE ERRTYHIN IN A ARRAY THAT HAS ALL OF THE VALUES OF EACH OBJECT IN THE CIRCUIT
                 //CHEC THE VALIDIDITY OF THE CIRCUIT
                 //IRule.Violations.get() = tester.Validate(clonedCircuit);
 
