@@ -50,12 +50,14 @@ namespace SpiceSharp
         {
             // Create an empty GameObject to hold the grid
             GameObject gridParent = new GameObject("Grid");
+            var gridsize = 5;
+            // GENERATE OBJECTS IN THE SCENE AND IMPORT THE CLEAR VALUES FOR THE LEVELS
 
             // Spawn an array of objects that will be the wires and nodes
             // 5 x 5 base breadboard
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < gridsize; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < gridsize; j++)
                 {
                     // Spawn the nodes
                     GameObject node = GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -64,20 +66,9 @@ namespace SpiceSharp
                     node.name = "Node: " + i + ":" + j;
                     node.transform.parent = gridParent.transform;
                     node.AddComponent<NodeChecker>();
+                    
 
-                    // Spawn column wires (might not be needed)
-                    /*if (i < 4)
-                    {
-                        GameObject columnWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                        columnWire.transform.position = new Vector3(i + 0.5f, 0, j);
-                        columnWire.transform.rotation = Quaternion.Euler(90, 0, 90);
-                        columnWire.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-                        columnWire.name = "ColumnWire: " + i + ":" + j + " to " + (i + 1) + ":" + j;
-                        columnWire.transform.parent = gridParent.transform;
-                        Debug.Log("New Column Wire: " + columnWire);
-                    }*/
-
-                    if (j < 4)
+                    if (j < gridsize - 1)
                     {
                         // Create the rowed wires
                         GameObject rowWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
@@ -104,8 +95,9 @@ namespace SpiceSharp
                         {
                             currentCircuit = new Circuit();
                         }
-
+                     
                         currentCircuit.Add(newWire);
+                        
                         Debug.Log("New Row Wire: " + rowWire + "\nNew SpiceSharp Wire: " + newWire);
 
                         /*// Make the cylinder glow
@@ -117,8 +109,17 @@ namespace SpiceSharp
                             material.SetColor("_EmissionColor", Color.green);
                         }*/
                     }
+
+                    if (j == gridsize - 1)
+                    {
+                        var BIGPLASTIC  = new Components.Resistor("Insulator: " + i + ":" + j, "Node: " + i + ":" + j, "0", 1.0e9);
+                        currentCircuit.Add(BIGPLASTIC);
+                    }
+                    
                 }
             }
+            // add a ground wire
+            
         }
 
         public void OnClickTest()
@@ -128,14 +129,14 @@ namespace SpiceSharp
 
             // Build the circuit
             // Add a voltage source to the cloned circuit
-            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
+            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "0", 1.0);
             clonedCircuit.Add(battery);
 
             // Add 2 resistors to the cloned circuit
-            Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
-            Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
+            Components.Resistor resistor1 = new Components.Resistor("NewWire1", "Node: 0:3", "Node: 2:3", 10);
+            Components.Resistor resistor2 = new Components.Resistor("NewWire2", "Node: 2:1", "Node: 4:1", 10);
 
-            DC tester = new DC("dc", "V1", 5.0, 5.0, 0);
+            DC tester = new DC("dc", "V1", 5.0, 6.0, 1);
 
             // Run the simulation
             foreach (int exportType in tester.Run(clonedCircuit))
@@ -168,18 +169,21 @@ namespace SpiceSharp
             // Clone the existing circuit
             Circuit clonedCircuit = (Circuit)currentCircuit.Clone();
 
+            //Create A Ground
+            Components.Resistor GroundWire = new Components.Resistor("Ground", "Node: 4:0", "0", 1.0e-5);
+            clonedCircuit.Add(GroundWire);
             // Build the circuit
             // Add a voltage source to the cloned circuit
-            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
+            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "0", 5.0);
             clonedCircuit.Add(battery);
 
             // Add 2 resistors to the cloned circuit
-            Components.Resistor resistor1 = new Components.Resistor("R1", "Node: 0:1", "Node: 2:1", 1.0e4);
-            Components.Resistor resistor2 = new Components.Resistor("R2", "Node: 2:2", "Node: 4:1", 1.0e4);
+            Components.Resistor resistor1 = new Components.Resistor("NewWire1", "Node: 0:3", "Node: 2:3", 10);
+            Components.Resistor resistor2 = new Components.Resistor("NewWire2", "Node: 2:1", "Node: 4:1", 10);
             clonedCircuit.Add(resistor1);
             clonedCircuit.Add(resistor2);
 
-            DC tester = new DC("dc", "V1", 0.0, 5.0, 0.1);
+            DC tester = new DC("dc", "V1", 5.0, 5.0, 0.1);
 
             // Validate the circuit
             //var rules = new SpiceSharp.Validation.IRules();
@@ -218,8 +222,12 @@ namespace SpiceSharp
                 Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage(randomNodeName)
                                                        + " @ Node: " + (randomNodeIndex / 5)
                                                        + ":" + (randomNodeIndex % 5));
+                
+                Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage("Node: 2:1") + " @ Node: " + (2) + ":" + (1));
+                
 
 
+                //TODO: STORE ERRTYHIN IN A ARRAY THAT HAS ALL OF THE VALUES OF EACH OBJECT IN THE CIRCUIT
                 //CHEC THE VALIDIDITY OF THE CIRCUIT
                 //IRule.Violations.get() = tester.Validate(clonedCircuit);
 
