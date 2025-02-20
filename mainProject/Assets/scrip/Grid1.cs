@@ -72,11 +72,11 @@ namespace SpiceSharp
                     GameObject node = new GameObject();
                     //GameObject node = GameObject.CreatePrimitive(PrimitiveType.Cube);
 
-                    if (i == 0)
+                    if (i == 4)
                     {
                         node = Instantiate(groundTile);
                     }
-                    else if (i == 4)
+                    else if (i == 0)
                     {
                         node = Instantiate(powerTile);
                     }
