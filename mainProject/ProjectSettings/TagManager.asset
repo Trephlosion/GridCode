@@ -20,6 +20,7 @@ TagManager:
   - partyhardy
   - Ground
   - Power
+  - wire
   layers:
   - Default
   - TransparentFX

@@ -69,6 +69,10 @@ PrefabInstance:
       value: wire4Length
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78372d438aa362c4bb56c055f52f0b55, type: 3}
+      propertyPath: m_TagString
+      value: wire
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78372d438aa362c4bb56c055f52f0b55, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
