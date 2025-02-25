@@ -59,7 +59,7 @@ namespace SpiceSharp
 
             //Create a battery GameObject
             GameObject battery = Instantiate(batteryObject);
-            battery.transform.position = new Vector3(1.0f, 0.0f, -1.5f);
+            battery.transform.position = new Vector3(1.0f, 1.0f, -1.5f);
             battery.transform.rotation = Quaternion.Euler(0, 90, 0);
 
             // Spawn an array of objects that will be the wires and nodes
@@ -109,7 +109,7 @@ namespace SpiceSharp
                         //GameObject rowWire = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
                         GameObject rowWire = Instantiate(wire);
 
-                        rowWire.transform.position = new Vector3(i, -0.381f, j + 0.5f);
+                        rowWire.transform.position = new Vector3(i, 1f, j + 0.5f);
                         //rowWire.transform.position = new Vector3(i, 0, j + 0.5f);
                         //rowWire.transform.rotation = Quaternion.Euler(90, 0, 0);
                         rowWire.transform.rotation = Quaternion.Euler(0, 90, 0);

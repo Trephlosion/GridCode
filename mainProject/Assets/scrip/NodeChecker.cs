@@ -1,6 +1,7 @@
 using SpiceSharp.Components;
 using SpiceSharp.Simulations;
 using System;
+using TMPro;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,41 +15,51 @@ namespace SpiceSharp
 
     public class NodeChecker : MonoBehaviour
     {
-        //remember this objects position as well as the 4 adjacent objects positions as well as the object that collided with this object
-        //private Vector3 thisObjectPosition;
-        //private Vector3[] adjacentObjectPositions = new Vector3[4];
+        private bool ground = false;
+        private bool power = false;
+        private bool tile = false;
+        private List<GameObject> connections;
+
+        private TMP_Text text = null;
+       
         private GameObject mostRecentCollidingObject;
         private Circuit currentCircuit;
 
         // Start is called before the first frame update
         void Start()
         {
-            //thisObjectPosition = transform.position;
-            //StoreAdjacentObjectPositions();
+            connections = new List<GameObject>();
 
+            if (this.gameObject.CompareTag("Ground")) { ground = true; }
+            if (this.gameObject.CompareTag("Power")) { power = true; }
+            if (this.gameObject.CompareTag("Cell")) { tile = true; }
+
+            //Debug.Log("Ground"+ ground + ", Power" + power + ", Cell" + tile);
+            text = this.gameObject.GetComponentInChildren<TMP_Text>();
+            if (text)
+            {
+                text.text = ("Accessed Text!");
+            }else if (text == null)
+            {
+                text.text = ("Did not access Text!");
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            text.text = "Num. of connections:" + connections.Count;
         }
         
-        //private void StoreAdjacentObjectPositions()
-        //{
-        //    adjacentObjectPositions[0] = transform.position + Vector3.forward;  // Front
-        //    adjacentObjectPositions[1] = transform.position + Vector3.back;     // Back
-        //    adjacentObjectPositions[2] = transform.position + Vector3.left;     // Left
-        //    adjacentObjectPositions[3] = transform.position + Vector3.right;    // Right
-        //}
-        
-        /*
-         */
         public void OnTriggerEnter(Collider collision)
         {
+            if(connections.Count <= 4)
+            {
+                connections.Add(collision.gameObject);
+            }
             if (collision.gameObject.CompareTag("wire"))
             {
-                Debug.Log("collision occuring at" + "");
+                //Debug.Log("collision occuring at" + "");
                 if (this.gameObject.CompareTag("Ground"))
                 {
                     ChangeColor(gameObject, Color.green);
@@ -62,11 +73,7 @@ namespace SpiceSharp
                     ChangeColor(gameObject, Color.blue);
                 }
                 ChangeColor(collision.gameObject, Color.yellow);
-
-                //if (gameObject.CompareTag("Component"))
-                //{
-                //    // AddComponentToCircuit(collider.gameObject);
-                //}
+             
             }
             
         }
@@ -76,7 +83,7 @@ namespace SpiceSharp
         {
             if (collision.gameObject.CompareTag("wire"))
             {
-                Debug.Log("collision occuring at" + "");
+                //Debug.Log("collision occuring at" + "");
                 if (this.gameObject.CompareTag("Ground"))
                 {
                     ChangeColor(gameObject, Color.white);
@@ -91,10 +98,6 @@ namespace SpiceSharp
                 }
                 ChangeColor(collision.gameObject, Color.white);
 
-                //if (gameObject.CompareTag("Component"))
-                //{
-                //    // AddComponentToCircuit(collider.gameObject);
-                //}
             }
 
         }
