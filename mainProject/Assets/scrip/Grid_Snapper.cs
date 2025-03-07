@@ -4,6 +4,7 @@ using SpiceSharp.Entities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using SpiceSharp.Simulations.Base;
 using SpiceSharp.Validation;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace SpiceSharp
 {
     public class Grid_Snapper : MonoBehaviour
     {
+        
         private Circuit currentCircuit;
 
         public static bool GetMouseButtonDown(int button)
@@ -62,7 +64,7 @@ namespace SpiceSharp
             NewZone.transform.rotation = Quaternion.Euler(90, 0, 0);
             NewZone.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             NewZone.name = "RowWire: " + x + ":" + z + " to " + x + ":" + (z + 1);
-            
+            // NewZone.GetComponent<MeshRenderer>().material.SetActive(false);
             NewZone.AddComponent<SpiceWireComponent>();
 
             // Create the resistor component separately
@@ -82,7 +84,6 @@ namespace SpiceSharp
             //TODO: CHANGE THE SHAPE OF THE COLLIDER TO BE OPTIMAL FOR THE CIRCUIT.
             
             NewZone.GetComponent<Collider>().isTrigger = true;
-            
             // Add the XR Socket Interactor
             NewZone.AddComponent<XRSocketInteractor>();
             NewZone.GetComponent<XRSocketInteractor>().attachTransform = NewZone.transform;
@@ -154,6 +155,7 @@ namespace SpiceSharp
             clonedCircuit.Add(GroundWire);
             // Build the circuit
             // Add a voltage source to the cloned circuit
+            
             VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "0", 5.0);
             clonedCircuit.Add(battery);
 
@@ -162,8 +164,13 @@ namespace SpiceSharp
             Components.Resistor resistor2 = new Components.Resistor("NewWire2", "Node: 2:1", "Node: 4:1", 10);
             clonedCircuit.Add(resistor1);
             clonedCircuit.Add(resistor2);
+            
+            
 
             DC tester = new DC("dc", "V1", 5.0, 5.0, 0.1);
+            
+            var currentExport = new RealPropertyExport( tester, "NewWire1", "i");
+
 
             // Validate the circuit
 
@@ -199,10 +206,9 @@ namespace SpiceSharp
                                                        + " @ Node: " + (randomNodeIndex / 5)
                                                        + ":" + (randomNodeIndex % 5));
                 
-                Debug.Log("SPICE# says: Current Voltage: " + tester.GetVoltage("Node: 2:1") + " @ Node: " + (2) + ":" + (1));
-                
-
-
+                Debug.Log("SPICE# says: Current through resistor1: " + currentExport.Value);
+                // Debug.Log("SPICE# says: Current through resistor2: " + tester.GetCurrent(resistor2));
+               // .Voltage = tester.GetVoltage("Node: 0:3");
                 //TODO: STORE ERRTYHIN IN A ARRAY THAT HAS ALL OF THE VALUES OF EACH OBJECT IN THE CIRCUIT
                 //CHEC THE VALIDIDITY OF THE CIRCUIT
                 //IRule.Violations.get() = tester.Validate(clonedCircuit);
