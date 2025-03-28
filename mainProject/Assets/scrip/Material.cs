@@ -11,9 +11,11 @@ using UnityEngine.XR.Interaction.Toolkit.UI.BodyUI;
 
 public class Material : MonoBehaviour
 {
-   public float innateResistance, intakeVoltage, capacitance, inductance;
+   public double innateResistance, intakeVoltage, capacitance, inductance;
    private bool isLed = false, isResistor = false, isLive = false, isWeak = false, isBurst = false;
    public string nombre;
+   public string posNode, negNode;
+   
    private XRDirectInteractor interactor = null;
 
    //popup window function
@@ -56,7 +58,7 @@ public class Material : MonoBehaviour
          isLive = false;
          isBurst = true;
       }
-      else if (Mathf.Approximately(this.gameObject.GetComponent<Cell>().instantaneousVoltage, intakeVoltage))
+      else if (Mathf.Approximately(this.gameObject.GetComponent<Cell>().instantaneousVoltage, (float)intakeVoltage))
       {
          isWeak = false;
          isLive = true;

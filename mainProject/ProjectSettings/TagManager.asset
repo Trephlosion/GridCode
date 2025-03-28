@@ -18,6 +18,9 @@ TagManager:
   - conductor
   - resistor
   - partyhardy
+  - Ground
+  - Power
+  - wire
   layers:
   - Default
   - TransparentFX

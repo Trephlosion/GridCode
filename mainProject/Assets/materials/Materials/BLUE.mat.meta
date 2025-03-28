@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:mainProject/Assets/materials/Materials/BLUE.mat.meta
 guid: b22dea390391a0049994ed9bd1affebf
 NativeFormatImporter:
+========
+guid: 843fd0548bb416f40947b82325f66c9e
+DefaultImporter:
+>>>>>>>> main:mainProject/Assets/Scenes/Practice Circuit - With components.unity.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 

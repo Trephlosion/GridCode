@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:mainProject/Assets/materials/Explosion.mat.meta
 guid: 4d55c29e3f9264f47a3e3cc9a079ae64
 NativeFormatImporter:
+========
+guid: 75c31be68b71e834089bed6dc8a7332b
+DefaultImporter:
+>>>>>>>> main:mainProject/Assets/Scenes/CableTester.unity.meta
   externalObjects: {}
   mainObjectFileID: 2100000
   userData: 
