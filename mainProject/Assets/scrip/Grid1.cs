@@ -23,6 +23,14 @@ namespace SpiceSharp
         public GameObject wire;
 
         private Circuit currentCircuit;
+        
+        
+        //TODO: ADD NUMBERED VALUE TO PASS IN FOR EACH OF THE GRID 
+        public int HEIGHT;
+        public int WIDTH;
+            
+        //TODO: ADD A TRANSFORM TO WHERE THE GRID WILL BE LOCATED
+        Vector3 gridOrigin = new Vector3(0, 0, 0);
 
         public static bool GetMouseButtonDown(int button)
         {
@@ -37,7 +45,7 @@ namespace SpiceSharp
         {
             // Create the breadboard
             // Spawn an array of objects that will be the wires and nodes
-            GridSpawn();
+            GridSpawn(HEIGHT, WIDTH, gridOrigin);
 
         }
 
@@ -52,8 +60,14 @@ namespace SpiceSharp
 
         }
 
-        public void GridSpawn()
+        public void GridSpawn(int h, int w, Vector3 gridOrigin)
         {
+            int HEIGHT = h;
+            int WIDTH = w;
+            
+            
+            
+            
             // Create an empty GameObject to hold the grid
             GameObject gridParent = new GameObject("Grid");
 
@@ -64,9 +78,9 @@ namespace SpiceSharp
 
             // Spawn an array of objects that will be the wires and nodes
             // 5 x 5 base breadboard
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < HEIGHT; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < WIDTH; j++)
                 {
                     // Spawn the nodes
                     GameObject node = new GameObject();
