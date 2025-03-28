@@ -26,8 +26,8 @@ namespace SpiceSharp
         
         
         //TODO: ADD NUMBERED VALUE TO PASS IN FOR EACH OF THE GRID 
-        public int HEIGHT;
-        public int WIDTH;
+        public int HEIGHT = 5;
+        public int WIDTH = 5;
             
         //TODO: ADD A TRANSFORM TO WHERE THE GRID WILL BE LOCATED
         Vector3 gridOrigin = new Vector3(0, 0, 0);
