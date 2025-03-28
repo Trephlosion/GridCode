@@ -60,7 +60,9 @@ namespace SpiceSharp
             
             // Create the rowed wires
             GameObject NewZone = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-            NewZone.transform.position = new Vector3(x, y, z + 0.5f);
+            NewZone.transform.position = new Vector3(x, y, z 
+                //+ 0.5f
+                );
             NewZone.transform.rotation = Quaternion.Euler(90, 0, 0);
             NewZone.transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             NewZone.name = "RowWire: " + x + ":" + z + " to " + x + ":" + (z + 1);
