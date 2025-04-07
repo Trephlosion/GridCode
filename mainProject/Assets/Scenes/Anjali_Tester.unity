@@ -8143,27 +8143,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1646463572630197591
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4725787584320216780}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 2, y: 1.3204545, z: 0.33580962}
-  m_Center: {x: -0.019054705, y: 1.688618, z: 0.16377431}
 --- !u!1 &1647770357970580601
 GameObject:
   m_ObjectHideFlags: 0
@@ -9261,7 +9240,7 @@ Transform:
   m_GameObject: {fileID: 9060255463382190290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -14.460721, y: 9.54412, z: 4.307565}
+  m_LocalPosition: {x: -14.460721, y: 9.706, z: 4.307565}
   m_LocalScale: {x: 0.76978344, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12501,7 +12480,6 @@ GameObject:
   - component: {fileID: 4440855765336835388}
   - component: {fileID: 3544467639933897507}
   - component: {fileID: 7550159385359487571}
-  - component: {fileID: 1646463572630197591}
   - component: {fileID: 5418714350925403992}
   - component: {fileID: 6928841308419314362}
   - component: {fileID: 7550159385359487570}
@@ -14125,7 +14103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6131886595639249758, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.417703
+      value: 9.622
       objectReference: {fileID: 0}
     - target: {fileID: 6131886595639249758, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14214,13 +14192,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1057060155866227557, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6264347930581355613}
   m_SourcePrefab: {fileID: 100100000, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
 --- !u!4 &6264347930581355608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6131886595639249758, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
   m_PrefabInstance: {fileID: 6264347930581355607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6264347930581355609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1057060155866227557, guid: d2de62b8cef0b434f95f6de77d8fb6c1, type: 3}
+  m_PrefabInstance: {fileID: 6264347930581355607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6264347930581355613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6264347930581355609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00940153c0afe424384f2e2b0bc92316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampresistance: 3
+  grnLEDParticle: {fileID: 1226435979}
+  explosion: {fileID: 895701968}
+  lightning: {fileID: 7439557684743954531}
+  lightning2: {fileID: 2804480881803949235}
+  batteryToResistorLight: {fileID: 1701540934}
+  batteryToWireLight: {fileID: 525187110}
+  closedResistorLight: {fileID: 747973117}
+  closedWireLight: {fileID: 1198999181}
+  powerLightning: {fileID: 505888581}
 --- !u!4 &6286861068590731785
 Transform:
   m_ObjectHideFlags: 0
@@ -17568,11 +17576,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 376963643335137444, guid: 33ea407eea644a045aa7abd5f59b2c5e, type: 3}
 --- !u!65 &8508954369256083690
