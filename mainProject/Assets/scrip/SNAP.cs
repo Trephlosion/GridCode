@@ -42,9 +42,10 @@ public class SNAP : MonoBehaviour
             // BroadcastMessage("wireSnapped");
             Debug.Log("wire snapped");
             explosion.SetActive(true);
+            grnLEDParticle.SetActive(false);
             //explosion.GetComponent<ParticleSystem>().Play();
-            
-           
+
+
         }
 
         if (other.gameObject.CompareTag("resistor"))
