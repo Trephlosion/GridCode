@@ -15,7 +15,9 @@ using Object = UnityEngine.Object;
 
 public class CircuitScript : ElectricalComponentClass
 {
-    public Circuit circuit;
+    private Circuit circuit;
+    private float current;
+
     // Start is called before the first frame update
     void Start()
     {

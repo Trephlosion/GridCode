@@ -4,7 +4,10 @@ using System.Collections.Generic;
 using SpiceSharp;
 using UnityEngine;
 [System.Serializable]
-public class ElectricalComponentClass {
+public class ElectricalComponentClass:MonoBehaviour {
+    // Whether the Electrical Component is a wire, a resistor, a switch, etc.
+    public string type;
+
     // The two attach points of each object
     public GameObject attachPointPositive;
     public GameObject attachPointNegative;
@@ -14,7 +17,7 @@ public class ElectricalComponentClass {
     // Start is called before the first frame update
     void Start()
     {
-        
+        type = this.gameObject.tag;
     }
 
     // Update is called once per frame
