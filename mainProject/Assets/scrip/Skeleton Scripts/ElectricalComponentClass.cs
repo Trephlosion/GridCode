@@ -3,10 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using SpiceSharp;
 using UnityEngine;
+
 [System.Serializable]
-public class ElectricalComponentClass:MonoBehaviour {
+
+class Wire : ElectricalComponentClass
+{
+    private void Start()
+    {
+        //this.GetComponent<ElectricalComponentClass>().AddToGrid();
+    }
+}
+
+//class Resistor : ElectricalComponentClass
+//{
+//    private void Start()
+//    {
+//        //this.GetComponent<ElectricalComponentClass>().AddToGrid();
+//    }
+//}
+
+class ElectricalComponentClass : MonoBehaviour {
     // Whether the Electrical Component is a wire, a resistor, a switch, etc.
-    public string type;
+    //public string type;
 
     // The two attach points of each object
     public GameObject attachPointPositive;
@@ -17,7 +35,8 @@ public class ElectricalComponentClass:MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        type = this.gameObject.tag;
+        //type = this.gameObject.tag;
+       
     }
 
     // Update is called once per frame

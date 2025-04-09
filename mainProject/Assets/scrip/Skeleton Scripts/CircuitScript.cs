@@ -13,7 +13,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using Object = UnityEngine.Object;
 
-public class CircuitScript : ElectricalComponentClass
+public class CircuitScript : MonoBehaviour
 {
     private Circuit circuit;
     private float current;
@@ -39,6 +39,8 @@ public class CircuitScript : ElectricalComponentClass
      * 
      * OUTPUT
      * If the grid is successfully spawned at the beginning of the program, return true. Otherwise, return false.
+     * 
+     * TODO: Change GridSpawn, can pass in a Vector3 parameter for positioning of the grid.
      */
 
     public bool GridSpawn(int rows, int columns)
