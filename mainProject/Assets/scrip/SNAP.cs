@@ -54,7 +54,12 @@ public class SNAP : MonoBehaviour
             lightning2.SetActive(true);
             batteryToResistorLight.SetActive(true);
             closedResistorLight.SetActive(true);
-            
+
+            //lightning not showing when wire contacts the grid
+            lightning.SetActive(false);
+            batteryToWireLight.SetActive(false);
+            closedWireLight.SetActive(false);
+
             // BroadcastMessage("resistorSnapped");
             Debug.Log("resistor snapped");
 
