@@ -15,7 +15,7 @@ using UnityEngine.XR.Interaction.Toolkit.Transformers;
 using UnityEngine.XR.Interaction.Toolkit.Utilities;
 
 
-public class SNAP : MonoBehaviour
+public class SNAP1 : MonoBehaviour
 {
     public float lampresistance = 3.0f;
     [SerializeField] private GameObject grnLEDParticle, explosion, lightning, lightning2, batteryToResistorLight, batteryToWireLight, closedResistorLight, closedWireLight, powerLightning;
@@ -42,10 +42,9 @@ public class SNAP : MonoBehaviour
             // BroadcastMessage("wireSnapped");
             Debug.Log("wire snapped");
             explosion.SetActive(true);
-            grnLEDParticle.SetActive(false);
-            //explosion.GetComponent<ParticleSystem>().Play();
-
-
+            explosion.GetComponent<ParticleSystem>().Play();
+            
+           
         }
 
         if (other.gameObject.CompareTag("resistor"))
@@ -54,34 +53,25 @@ public class SNAP : MonoBehaviour
             lightning2.SetActive(true);
             batteryToResistorLight.SetActive(true);
             closedResistorLight.SetActive(true);
-
-            //lightning not showing when wire contacts the grid
-            lightning.SetActive(false);
-            batteryToWireLight.SetActive(false);
-            closedWireLight.SetActive(false);
-
+            
             // BroadcastMessage("resistorSnapped");
             Debug.Log("resistor snapped");
-
-            //start weak lamp
-            grnLEDParticle.SetActive(true);
-            //grnLEDParticle.GetComponent<ParticleSystem>().Play();
-            explosion.SetActive(false);
-
+            
             //validate resistance
             if ((float)other.gameObject.GetComponent<Material>().innateResistance >= lampresistance)
             {
                 //start weak lamp
                 grnLEDParticle.SetActive(true);
-                //grnLEDParticle.GetComponent<ParticleSystem>().Play();
+                grnLEDParticle.GetComponent<ParticleSystem>().Play();
                 explosion.SetActive(false);
+                //explosion.GetComponent<ParticleSystem>().Play();
 
             }
             else if (Mathf.Approximately((float)other.gameObject.GetComponent<Material>().innateResistance, lampresistance))
             {
                 // start active lamp
                 grnLEDParticle.SetActive(true);
-                //grnLEDParticle.GetComponent<ParticleSystem>().Play();
+                grnLEDParticle.GetComponent<ParticleSystem>().Play();
                 explosion.SetActive(false);
                 // particle.GetComponent<ParticleSystem>().main.startColor = Color.FromArgb(130, 255, 53);
 
@@ -90,7 +80,7 @@ public class SNAP : MonoBehaviour
             {
                 // start explosion
                 explosion.SetActive(true);
-                //explosion.GetComponentInChildren<ParticleSystem>().Play();
+                explosion.GetComponentInChildren<ParticleSystem>().Play();
             }
 
         }

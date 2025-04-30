@@ -120,7 +120,7 @@ namespace SpiceSharp
             }
             else if (mostRecentCollidingObject.CompareTag("Resistor"))
             {
-                Resistor resistor = mostRecentCollidingObject.GetComponent<Resistor>();
+                ResistorScript resistor = mostRecentCollidingObject.GetComponent<ResistorScript>();
                 if (resistor != null)
                 {
                     Components.Resistor newResistor = new Components.Resistor(mostRecentCollidingObject.name, currentNodeName, adjacentNodeName, 5.0f);

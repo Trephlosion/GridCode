@@ -20,7 +20,7 @@ namespace SpiceSharp
         private bool tile = false;
         private List<GameObject> connections;
 
-        private TMP_Text text = null;
+        //private TMP_Text text = null;
        
         private GameObject mostRecentCollidingObject;
         private Circuit currentCircuit;
@@ -35,20 +35,20 @@ namespace SpiceSharp
             if (this.gameObject.CompareTag("Cell")) { tile = true; }
 
             //Debug.Log("Ground"+ ground + ", Power" + power + ", Cell" + tile);
-            text = this.gameObject.GetComponentInChildren<TMP_Text>();
-            if (text)
-            {
-                text.text = ("Accessed Text!");
-            }else if (text == null)
-            {
-                text.text = ("Did not access Text!");
-            }
+            //text = this.gameObject.GetComponentInChildren<TMP_Text>();
+            //if (text)
+            //{
+            //    text.text = ("Accessed Text!");
+            //}else if (text == null)
+            //{
+            //text.text = ("Did not access Text!");
+            //}
         }
 
         // Update is called once per frame
         void Update()
         {
-            text.text = "Num. of connections:" + connections.Count;
+            //text.text = "Num. of connections:" + connections.Count;
         }
         
         public void OnTriggerEnter(Collider collision)
@@ -145,7 +145,7 @@ namespace SpiceSharp
             }
             else if (mostRecentCollidingObject.CompareTag("Resistor"))
             {
-                Resistor resistor = mostRecentCollidingObject.GetComponent<Resistor>();
+                ResistorScript resistor = mostRecentCollidingObject.GetComponent<ResistorScript>();
                 if (resistor != null)
                 {
                     Components.Resistor newResistor = new Components.Resistor(mostRecentCollidingObject.name, currentNodeName, adjacentNodeName, 5.0f);
