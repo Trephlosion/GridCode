@@ -172,7 +172,7 @@ namespace SpiceSharp
 
             // Build the circuit
             // Add a voltage source to the cloned circuit
-            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 1.0);
+            VoltageSource battery = new VoltageSource("V1", "Node: 0:0", "Node: 4:0", 5.0);
             clonedCircuit.Add(battery);
 
             // Add 2 resistors to the cloned circuit
