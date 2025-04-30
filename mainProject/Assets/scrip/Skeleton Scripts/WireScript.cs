@@ -1,4 +1,5 @@
 using System.Collections;
+using SpiceSharp;
 using System.Collections.Generic;
 using SpiceSharp.Components;
 using UnityEngine;
@@ -10,17 +11,26 @@ public class WireScript : ElectricalComponentClass
     //[SerializeField] private Material _overheatMaterial;
     //[SerializeField] private Material _curMaterial;
 
-    private VoltageSource _voltageSource;
+    private SpiceSharp.Components.Resistor _wireSource;
+    private CircuitScript _circuit;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        _voltageSource = CreateVoltageSource();
+        _wireSource = CreateWire();
+        _circuit = FindObjectOfType<CircuitScript>();
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (this.AddToGrid())
+        {
+            _circuit.circuit.Add(_wireSource);
+            return;
+        }
         if (currentFlow >= 2.0f) 
         {
             Overheat();
@@ -31,14 +41,14 @@ public class WireScript : ElectricalComponentClass
         }
     }
 
-    public VoltageSource GetVoltageSource()
+    public SpiceSharp.Components.Resistor GetVoltageSource()
     {
-        return _voltageSource;
+        return _wireSource;
     }
 
-    public VoltageSource CreateVoltageSource()
+    public SpiceSharp.Components.Resistor CreateWire()
     {
-        return new VoltageSource(this.name, this.attachPointPositive.name, this.attachPointNegative.name, this.GetResistance());
+        return new SpiceSharp.Components.Resistor(this.name, this.attachPointPositive.name, this.attachPointNegative.name, this.GetResistance());
     }
 
     public void Overheat()

@@ -28,8 +28,7 @@ public class ElectricalComponentClass : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        positiveAttached = attachPointPositive.GetComponent<AttachPoint>().attachedTile;
-        negativeAttached = attachPointNegative.GetComponent<AttachPoint>().attachedTile;
+        AddToGrid();
     }
 
     /// <summary>
@@ -43,8 +42,17 @@ public class ElectricalComponentClass : MonoBehaviour {
     /// </returns>
     public bool AddToGrid()
     {
+        positiveAttached = attachPointPositive.GetComponent<AttachPoint>().attachedTile;
+        negativeAttached = attachPointNegative.GetComponent<AttachPoint>().attachedTile;
+
+
+        Debug.Log("Positive" + positiveAttached);
+        Debug.Log("Negative" + negativeAttached);
+
+
         if (positiveAttached && negativeAttached)
         {
+            Debug.Log("Added ElectricalComponent to Grid");
             inCircuit = true;
             return inCircuit;
         }

@@ -12,6 +12,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using Object = UnityEngine.Object;
+using JetBrains.Annotations;
 
 namespace SpiceSharp
 {
@@ -19,7 +20,10 @@ namespace SpiceSharp
     {
         [SerializeField] int rows;
         [SerializeField] int columns;
-        private Circuit circuit;
+
+        [SerializeField] private GameObject groundTile,powerTile,normalTile, batteryObject, wire;
+
+        public Circuit circuit;
         private float current;
 
         // Start is called before the first frame update
@@ -32,6 +36,7 @@ namespace SpiceSharp
         void Update()
         {
             CurrentCircuitStatus();
+            Debug.Log("Number of Components in Circuit: " + CircuitComponents());
         }
         /*
          * This function helps the user spawn a grid with a set number of rows and columns. This grid is spawned only once, with socket interactors on top of the function. 
@@ -51,6 +56,10 @@ namespace SpiceSharp
         {
             // Create an empty GameObject to hold the grid
             GameObject gridParent = new GameObject("Grid");
+            //Create a battery GameObject
+            GameObject battery = Instantiate(batteryObject);
+            battery.transform.position = new Vector3(1.0f, 1.0f, -1.5f);
+            battery.transform.rotation = Quaternion.Euler(0, 0, 0);
             //var gridsize = 5;
             // GENERATE OBJECTS IN THE SCENE AND IMPORT THE CLEAR VALUES FOR THE LEVELS
 
@@ -61,7 +70,22 @@ namespace SpiceSharp
                 for (int j = 0; j < columns; j++)
                 {
                     // Spawn the nodes
-                    GameObject node = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    GameObject node = new GameObject();
+                        //GameObject.CreatePrimitive(PrimitiveType.Cube);
+
+                    if (i == 4)
+                    {
+                        node = Instantiate(groundTile);
+                    }
+                    else if (i == 0)
+                    {
+                        node = Instantiate(powerTile);
+                    }
+                    else
+                    {
+                        node = Instantiate(normalTile);
+                    }
+
                     node.transform.position = new Vector3(position.x + i, 0, j + position.z);
                     node.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                     node.name = "Node: " + i + ":" + j;
@@ -107,7 +131,8 @@ namespace SpiceSharp
          */
         public string CircuitComponents()
         {
-            return "";
+            
+            return circuit.Count.ToString();
         }
     }
 

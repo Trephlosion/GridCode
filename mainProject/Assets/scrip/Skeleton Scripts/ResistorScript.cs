@@ -13,7 +13,7 @@ namespace SpiceSharp
         // Start is called before the first frame update
         void Start()
         {
-            _resistanceSource = CreateVoltageSource();
+            _resistanceSource = CreateResistorSource();
         }
 
         // Update is called once per frame
@@ -21,12 +21,12 @@ namespace SpiceSharp
         {
 
         }
-        public Components.Resistor GetVoltageSource()
+        public Components.Resistor GetResistorSource()
         {
             return _resistanceSource;
         }
 
-        public Components.Resistor CreateVoltageSource()
+        public Components.Resistor CreateResistorSource()
         {
             return new Components.Resistor(this.name, this.attachPointPositive.name, this.attachPointNegative.name, this.GetResistance());
         }
