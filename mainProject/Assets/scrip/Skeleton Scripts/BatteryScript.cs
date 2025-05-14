@@ -14,6 +14,7 @@ public class BatteryScript : ElectricalComponentClass
 
     private VoltageSource _voltageSource;
     private CircuitScript _circuit;
+    private bool _added = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,16 @@ public class BatteryScript : ElectricalComponentClass
     // Update is called once per frame
     void Update()
     {
-        if (this.AddToGrid())
+        if (this.AddToGrid() && !_added)
         {
             _circuit.circuit.Add(_voltageSource);
+            _added = true;
+            return;
+        }
+        else if (!this.AddToGrid() && _added)
+        {
+            _circuit.circuit.Remove(_voltageSource);
+            _added = false;
             return;
         }
     }

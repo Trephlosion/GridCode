@@ -9,6 +9,7 @@ namespace SpiceSharp
 {
     public class ResistorScript : ElectricalComponentClass
     {
+        private bool _added = false;
         private Components.Resistor _resistanceSource;
         // Start is called before the first frame update
         void Start()

@@ -46,13 +46,13 @@ public class ElectricalComponentClass : MonoBehaviour {
         negativeAttached = attachPointNegative.GetComponent<AttachPoint>().attachedTile;
 
 
-        Debug.Log("Positive" + positiveAttached);
-        Debug.Log("Negative" + negativeAttached);
+        //Debug.Log("Positive" + positiveAttached);
+        //Debug.Log("Negative" + negativeAttached);
 
 
         if (positiveAttached && negativeAttached)
         {
-            Debug.Log("Added ElectricalComponent to Grid");
+            //Debug.Log("Added ElectricalComponent to Grid");
             inCircuit = true;
             return inCircuit;
         }

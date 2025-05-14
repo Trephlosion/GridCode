@@ -13,6 +13,7 @@ public class WireScript : ElectricalComponentClass
 
     private SpiceSharp.Components.Resistor _wireSource;
     private CircuitScript _circuit;
+    private bool _added = false;
 
 
     // Start is called before the first frame update
@@ -26,9 +27,15 @@ public class WireScript : ElectricalComponentClass
     // Update is called once per frame
     void Update()
     {
-        if (this.AddToGrid())
+        if (this.AddToGrid() && !_added)
         {
             _circuit.circuit.Add(_wireSource);
+            _added = false;
+            return;
+        }
+        else if (!this.AddToGrid() && _added) { 
+            _circuit.circuit.Remove(_wireSource);
+            _added = false;
             return;
         }
         if (currentFlow >= 2.0f) 

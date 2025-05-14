@@ -27,13 +27,13 @@ public class AttachPoint : MonoBehaviour
         // If colliding with the cell, record the colliding tile with the system
         if (other.gameObject.tag == "Cell")
         {
-            Debug.Log("Entered Cell!");
+            //Debug.Log("Entered Cell!");
             attachedTile = true;
             attachedToTile = other.gameObject;
         }
         else if (other.gameObject.tag == "Power")
         {
-            Debug.Log("Entered Power!");
+            //Debug.Log("Entered Power!");
             attachedTile = true;
             attachedToTile = other.gameObject;
 
@@ -42,6 +42,30 @@ public class AttachPoint : MonoBehaviour
         {
             attachedTile = true;
             attachedToTile = other.gameObject;
+
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+
+        // If colliding with the cell, record the colliding tile with the system
+        if (other.gameObject.tag == "Cell")
+        {
+            //Debug.Log("Entered Cell!");
+            attachedTile = false;
+            attachedToTile = null;
+        }
+        else if (other.gameObject.tag == "Power")
+        {
+            //Debug.Log("Entered Power!");
+            attachedTile = false;
+            attachedToTile = null;
+
+        }
+        else if (other.gameObject.tag == "Ground")
+        {
+            attachedTile = false;
+            attachedToTile = null;
 
         }
     }
@@ -63,6 +87,6 @@ public class AttachPoint : MonoBehaviour
     //        attachedTile = false;
 
     //    }
-        
+
     //}
 }
